@@ -4,122 +4,112 @@
 # ============================================
 
 personal_info:
-  name: "Sachin Chakrawarti"
+  name: "Aman Vishwakarma"
   gender: "Male"
-  date_of_birth: "2001-03-20"
-  age: 24
-  email: "chakrawartisachin012@gmail.com"
-  mobile: "7879393032"
-  location: "Bengaluru"
-  
+  date_of_birth: "03/12/2000"
+  age: "26"
+  email: "aman031298@gmail.com"
+  mobile: "9977959918"
+  location: "Pune"
+
   # Profile completion
-  profile_completion: 92%
+  profile_completion: 85%
   profile_summary: |
-    Full-stack developer and data science enthusiast with comprehensive 
-    experience in web application development. Currently enhancing technical 
-    expertise through M.Tech in Data Science with specialization in machine 
-    learning and artificial intelligence. Skilled in creating seamless user 
-    experiences and robust server-side architectures. Demonstrated success in 
-    freelance projects delivering end-to-end solutions. Committed to 
-    continuous learning and staying current with emerging technologies.
+    Software Engineer with hands-on experience building backend services for
+    multi-vendor marketplace and CRM platforms. Skilled in designing secure
+    JWT-based authentication, role-based access control, and scalable REST
+    APIs consumed by web and mobile applications. Proven track record
+    architecting production-grade systems end-to-end, including payment
+    gateway integration, AI-powered features, and CI/CD-driven deployment
+    workflows. Strong foundation in Java, Node.js/TypeScript, and relational
+    database performance tuning.
 
 # ============================================
 # CAREER PREFERENCES
 # ============================================
 career_preferences:
-  preferred_job_type: 
+  preferred_job_type:
     - "Jobs"
-    - "Internships"
-  
+
   availability_to_work: "15 Days or less"
-  
+
   preferred_locations:
+    - "Pune"
     - "Hyderabad/Secunderabad"
-    - "Ahmedabad"
-    - "Gurgaon/Gurugram"
     - "Bangalore/Bengaluru"
     - "Mumbai"
-    - "Pune"
-    - "Chennai"
+    - "Gurgaon/Gurugram"
     - "Noida"
     - "Delhi / NCR"
     - "Remote"
-  
-  expected_salary: "15-20 LPA"
-  notice_period: "15 days"
+
+  expected_salary: ""
+  notice_period: ""
   work_authorization: "Indian Citizen"
 
 # ============================================
 # EDUCATION
 # ============================================
 education:
-  - degree: "M.Tech"
-    specialization: "Data Science"
-    university: "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)"
-    location: "Bhopal"
-    year: "2026"
-    status: "Pursuing"
-    study_mode: "Full Time"
-    description: "Specialization in machine learning and artificial intelligence"
-  
   - degree: "B.Tech / B.E."
-    specialization: "Computer Science"
-    university: "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)"
-    location: "Bhopal"
-    year: "2023"
+    specialization: "Computer Science and Engineering"
+    university: "Shri Ram Institute of Science and Technology"
+    location: ""
+    year: ""
     status: "Graduated"
     study_mode: "Full Time"
+    cgpa: "8.67"
     description: "Computer Science and Engineering"
-  
-  - degree: "Class XII"
-    board: "Madhya Pradesh Board"
-    medium: "Hindi"
-    year: "2019"
-    percentage: 61
-    status: "Passed"
-  
-  - degree: "Class X"
-    board: "Madhya Pradesh Board"
-    medium: "Hindi"
-    year: "2017"
-    percentage: 71
-    status: "Passed"
 
 # ============================================
 # KEY SKILLS
 # ============================================
 key_skills:
+  # Languages
+  languages_tech:
+    - "Java"
+    - "JavaScript"
+    - "TypeScript"
+    - "SQL"
+    - "C++"
+    - "Node.js"
+
   # Backend Technologies
   backend:
-    - "Python"
-    - "Java"
-    - "J2EE"
     - "Spring Boot"
-    - "Microservices"
-  
+    - "Spring MVC"
+    - "Hibernate"
+    - "JPA"
+    - "REST APIs"
+    - "JWT Authentication"
+    - "Express.js"
+    - "Prisma ORM"
+
   # Frontend Technologies
   frontend:
-    - "React.js"
-    - "JavaScript"
-  
+    - "React"
+    - "HTML5"
+    - "CSS3"
+    - "Bootstrap"
+    - "Ionic"
+
   # Databases
   databases:
-    - "MongoDB"
+    - "MySQL"
     - "PostgreSQL"
-  
-  # Data Science & ML
-  data_science:
-    - "Machine Learning"
-    - "Algorithms"
-  
-  # Additional Skills
+    - "Oracle SQL"
+    - "MongoDB"
+
+  # DevOps & Tools
   additional:
-    - "REST APIs"
-    - "Git"
+    - "Linux"
     - "Docker"
-    - "AWS"
-    - "Data Structures"
-    - "System Design"
+    - "Git"
+    - "GitHub Actions"
+    - "CI/CD"
+    - "Postman"
+    - "Swagger"
+    - "Role-Based Access Control (RBAC)"
 
 # ============================================
 # LANGUAGES
@@ -130,7 +120,7 @@ languages:
     can_speak: true
     can_read: true
     can_write: true
-  
+
   - name: "English"
     proficiency: "Professional Working"
     can_speak: true
@@ -141,94 +131,107 @@ languages:
 # PROJECTS
 # ============================================
 projects:
-  - name: "BookQubit"
-    type: "Academic Project"
-    duration: "Feb'24 to Feb'24"
+  - name: "Zopin – Hyperlocal Marketplace Platform"
+    type: "Personal/Professional Project"
+    location: "Pune"
+    duration: "Jan 2026 to Present"
     description: |
-      BookQubit is an innovative book management and recommendation system 
-      that helps users discover, track, and manage their reading journey.
-      Implemented using modern web technologies with a focus on user experience
-      and personalized recommendations.
+      Architected and developed a production-grade hyperlocal marketplace
+      connecting customers, shopkeepers, homepreneurs, and service providers
+      through a unified digital platform. Designed and implemented 100+ REST
+      APIs. Integrated Cashfree Payment Gateway for subscription lifecycle
+      management, webhook handling, renewals, plan upgrades, and refunds.
+      Built an AI-powered assistant using Google Gemini for offer discovery,
+      business search, coupon recommendations, and conversational
+      interactions. Implemented Docker-based deployment workflows, CI/CD
+      automation, and PostgreSQL schema migration strategies.
     technologies_used:
-      - "Python"
-      - "Flask"
-      - "React.js"
-      - "MongoDB"
-      - "Machine Learning Algorithms"
-  
-  - name: "E-commerce Website"
-    type: "Academic Project"
-    duration: "Jan'24 to Jun'24"
+      - "Node.js"
+      - "TypeScript"
+      - "Express.js"
+      - "PostgreSQL"
+      - "Prisma ORM"
+      - "Docker"
+      - "Google Gemini"
+      - "Cashfree Payment Gateway"
+
+  - name: "Client Magnet – CRM Platform"
+    type: "Personal/Professional Project"
+    location: "Hyderabad"
+    duration: "July 2025 to Dec 2025"
     description: |
-      Full-featured e-commerce platform with product catalog, shopping cart,
-      user authentication, and payment integration. Built with microservices
-      architecture for scalability and maintainability.
+      Developed a customer relationship management platform to streamline
+      sales operations and customer lifecycle management. Designed
+      role-based workflows for Sales Representatives and Employees with
+      controlled access to business functions. Implemented Java backend
+      services and Oracle SQL integration for secure and efficient data
+      management. Improved operational efficiency through centralized
+      customer information and workflow automation.
     technologies_used:
       - "Java"
-      - "Spring Boot"
-      - "React.js"
-      - "PostgreSQL"
-      - "Microservices"
-      - "Docker"
+      - "Oracle SQL"
 
 # ============================================
 # INTERNSHIPS
 # ============================================
 internships: []
-  # Add internship details when available
-  # - company: "Company Name"
-  #   role: "Position"
-  #   duration: "Dates"
-  #   description: "What you did"
 
 # ============================================
 # ACCOMPLISHMENTS
 # ============================================
 accomplishments:
   certifications:
-    - name: "PCAP - Programming Essentials in Python"
-      issued_by: "Cisco Networking Academy"
-      date: "2024"
-      credential_id: "PCAP-12345"
-      description: "Certified Python programming professional"
-  
-  awards: []
-    # Add awards when available
-    # - name: "Award Name"
-    #   issuer: "Issuing Organization"
-    #   year: "2024"
-    #   description: "Description of achievement"
-  
-  competitive_exams:
-    - name: "GATE"
-      score: "35000 Rank"
-      year: "2023"
-      description: "Graduate Aptitude Test in Engineering"
-  
+    - name: "Azure Fundamentals (AZ-900)"
+      issued_by: "Microsoft"
+      date: ""
+      credential_id: ""
+      description: "Microsoft Azure fundamentals certification"
+
+  awards:
+    - name: "First Runner-Up, National Level Software Development Championship (Hackathon)"
+      issuer: "St. Aloysius College, Jabalpur"
+      year: ""
+      description: "First Runner-Up in a national-level hackathon"
+
+  competitive_exams: []
+
   academic_achievements:
-    btech: "All rounder"
-    class_xii: "All rounder"
+    btech: "CGPA 8.67/10"
+    hackathons: "Participated in NETATHON2023 - developed solutions for an e-commerce business problem statement"
 
 # ============================================
 # EMPLOYMENT
 # ============================================
-employment: []
-  # Add employment details when available
-  # - company: "Company Name"
-  #   designation: "Job Title"
-  #   duration: "Date Range"
-  #   location: "City, Country"
-  #   description: "Responsibilities and achievements"
+employment:
+  - company: "ADRS Techno Pvt. Ltd."
+    designation: "Software Engineer"
+    duration: "Apr 2024 - Present"
+    location: ""
+    description: |
+      Engineered and maintained backend services powering a multi-vendor
+      marketplace platform, delivering product management, category
+      management, cart, checkout, order processing, and invoicing
+      workflows. Designed and implemented secure JWT-based authentication
+      and role-based access control (RBAC) architecture supporting Admin,
+      Vendor, and Customer operations. Developed scalable REST APIs
+      consumed by web and mobile applications with structured validation
+      and business rule enforcement. Integrated payment gateway services
+      and automated invoice generation workflows, streamlining transaction
+      processing and order lifecycle management. Optimized MySQL
+      performance using indexing, query refactoring, joins, and stored
+      procedures, improving application responsiveness. Managed Linux
+      server deployments, production debugging, access control, release
+      activities, and application maintenance.
 
 # ============================================
 # RESUME
 # ============================================
 resume:
-  file_name: "Sachin_Chakrawarti_Resume.pdf"
-  uploaded_on: "2025-11-21"
-  file_path: "./resume/Sachin_Chakrawarti_Resume.pdf"
+  file_name: "Aman Resume.pdf"
+  uploaded_on: "2026-08-13"
+  file_path: "./resume/Aman Resume.pdf"
   format: "PDF"
-  size: "2MB"
+  size: "137KB"
   is_updated: true
   supported_formats: ["doc", "docx", "rtf", "pdf"]
 
@@ -236,18 +239,19 @@ resume:
 # ACTIVITY INSIGHTS
 # ============================================
 activity_insights:
-  last_login: "2025-11-21"
-  profile_views: 45
-  applications_sent: 12
-  job_alerts: 8
-  saved_jobs: 5
-  profile_completion: 92%
-  
-  # Missing details (8% incomplete)
+  last_login: "2026-08-13"
+  profile_views: 0
+  applications_sent: 0
+  job_alerts: 0
+  saved_jobs: 0
+  profile_completion: 85%
+
+  # Missing details
   missing_details:
-    - "Internship Experience"
-    - "Employment History"
-    - "Professional Certifications"
+    - "Expected/Current Salary"
+    - "Notice Period"
+    - "Date of Birth"
+    - "Social Links (LinkedIn/GitHub)"
 
 # ============================================
 # PLATFORM SETTINGS
@@ -258,48 +262,48 @@ platform_settings:
   job_alerts: true
   recommended_jobs: true
   application_status_updates: true
-  
+
   # Preferences
   job_alert_frequency: "Daily"
-  preferred_job_roles: ["Software Developer", "Data Scientist", "Full Stack Developer"]
-  preferred_industries: ["IT Services", "Software Development", "Fintech"]
+  preferred_job_roles: ["Software Engineer", "Backend Developer", "Full Stack Developer"]
+  preferred_industries: ["IT Services", "Software Development", "E-commerce", "Fintech"]
 
 # ============================================
 # SOCIAL & CONTACT
 # ============================================
 social_links:
-  linkedin: "https://www.linkedin.com/in/sachinchakrawarti"
-  github: "https://github.com/sachinchakrawarti"
-  portfolio: "https://sachinchakrawarti.dev"
+  linkedin: ""
+  github: ""
+  portfolio: ""
 
 # ============================================
 # APPLICATION FORM DATA
 # ============================================
 form_data:
   # Common fields for application forms
-  full_name: "Sachin Chakrawarti"
-  first_name: "Sachin"
-  last_name: "Chakrawarti"
-  email: "chakrawartisachin012@gmail.com"
-  phone: "7879393032"
-  current_location: "Bengaluru"
-  current_company: ""
-  current_designation: ""
-  total_experience: "2-3 years"
+  full_name: "Aman Vishwakarma"
+  first_name: "Aman"
+  last_name: "Vishwakarma"
+  email: "aman031298@gmail.com"
+  phone: "9977959918"
+  current_location: "Pune"
+  current_company: "ADRS Techno Pvt. Ltd."
+  current_designation: "Software Engineer"
+  total_experience: "2 years"
   relevant_experience: "2 years"
-  current_salary: "8-10 LPA"
-  expected_salary: "15-20 LPA"
-  notice_period: "15 days"
-  
+  current_salary: ""
+  expected_salary: ""
+  notice_period: ""
+
   # Education details for forms
-  highest_education: "M.Tech"
-  college_name: "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)"
-  graduation_year: "2026"
-  cgpa: "8.5"
-  
+  highest_education: "B.Tech / B.E."
+  college_name: "Shri Ram Institute of Science and Technology"
+  graduation_year: ""
+  cgpa: "8.67"
+
   # Skills (comma separated for forms)
-  skills_string: "Python, Java, Spring Boot, React.js, MongoDB, PostgreSQL, Machine Learning, Microservices"
-  
+  skills_string: "Java, JavaScript, TypeScript, SQL, C++, Node.js, Spring Boot, Hibernate, REST APIs, JWT Authentication, React, MySQL, PostgreSQL, Oracle SQL, MongoDB, Docker, Git, CI/CD"
+
   # Work authorization
   work_authorization: "Indian Citizen"
   visa_status: "None required"
@@ -310,27 +314,28 @@ form_data:
 cover_letter_template: |
   Dear Hiring Manager,
 
-  I am writing to express my strong interest in the {position} position at {company}. 
-  As a Full-stack developer and data science enthusiast with comprehensive experience 
-  in web application development, I am excited about the opportunity to contribute to 
-  your team.
+  I am writing to express my strong interest in the {position} position at {company}.
+  As a Software Engineer with hands-on experience building backend services for
+  multi-vendor marketplace and CRM platforms, I am excited about the opportunity to
+  contribute to your team.
 
-  Currently pursuing M.Tech in Data Science with specialization in machine learning and 
-  artificial intelligence at Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV), I have 
-  developed strong skills in Python, Java, React.js, and Spring Boot. My project 
-  experience includes developing BookQubit, a book recommendation system, and a 
-  full-featured e-commerce website using microservices architecture.
+  Currently working at ADRS Techno Pvt. Ltd., I have designed and implemented secure
+  JWT-based authentication, role-based access control, and scalable REST APIs consumed
+  by web and mobile applications. My project experience includes architecting Zopin, a
+  production-grade hyperlocal marketplace with 100+ REST APIs, payment gateway
+  integration, and an AI-powered assistant using Google Gemini, as well as Client Magnet,
+  a CRM platform built with Java and Oracle SQL.
 
-  I am particularly drawn to this opportunity because {reason}. I believe my technical 
-  skills, combined with my passion for continuous learning, would make me a valuable 
-  asset to your organization.
+  I am particularly drawn to this opportunity because {reason}. I believe my technical
+  skills, combined with my passion for building scalable, production-grade systems,
+  would make me a valuable asset to your organization.
 
   I look forward to discussing how my experience and skills align with your requirements.
 
   Thank you for your consideration.
 
   Sincerely,
-  Sachin Chakrawarti
+  Aman Vishwakarma
 
 # ============================================
 # NAUKRI CAMPUS FEATURES
@@ -346,7 +351,7 @@ naukri_campus:
   speech_assessment: true
   ai_prompt_mastery: true
   daily_quiz_challenge: true
-  
+
   # Contests
   contests:
     - "All India NCAT"
@@ -354,7 +359,7 @@ naukri_campus:
     - "Naukri Campus Squad"
     - "Engineers' Ring of Honour"
     - "CareerVerse"
-  
+
   # Opportunities
   opportunities:
     - "Recommended jobs"
@@ -369,19 +374,19 @@ naukri_campus:
 integration_settings:
   # For applying with one click
   easy_apply_enabled: true
-  
+
   # Automatically fill forms
   auto_fill_forms: true
-  
+
   # Upload resume automatically
   auto_upload_resume: true
-  
+
   # Save applied jobs
   save_applied_jobs: true
-  
+
   # Track application status
   track_applications: true
-  
+
   # Get job alerts
   job_alerts_enabled: true
 
@@ -392,46 +397,45 @@ job_search_preferences:
   # Keywords for job search
   keywords:
     primary:
-      - "Full Stack Developer"
-      - "Data Scientist"
-      - "Python Developer"
-      - "Java Developer"
       - "Software Engineer"
-    secondary:
       - "Backend Developer"
-      - "Machine Learning Engineer"
+      - "Java Developer"
+      - "Node.js Developer"
+      - "Full Stack Developer"
+    secondary:
+      - "Spring Boot Developer"
+      - "REST API Developer"
       - "React Developer"
-  
+
   # Location preferences
   locations:
     primary:
-      - "Bangalore"
-      - "Hyderabad"
       - "Pune"
+      - "Hyderabad"
+      - "Bangalore"
     secondary:
       - "Mumbai"
-      - "Chennai"
+      - "Noida"
       - "Delhi NCR"
     remote: true
-  
+
   # Salary expectations
   salary:
-    minimum: 1500000
-    maximum: 2000000
+    minimum: null
+    maximum: null
     currency: "INR"
-  
+
   # Job types
   job_types:
     - "Full Time"
-    - "Internship"
-  
+
   # Company preferences
   preferred_companies:
     - "Product Based Companies"
     - "Startups"
     - "Fintech"
     - "IT Services"
-  
+
   # Exclude keywords
   exclude_keywords:
     - "Senior"
@@ -448,16 +452,18 @@ job_search_preferences:
 # ============================================
 resume_variations:
   # For different job types
-  software_developer: |
-    Skilled Software Developer with expertise in full-stack development
-    and data science. Strong background in Python, Java, and modern
-    web technologies.
-  
-  data_scientist: |
-    Data Science enthusiast with M.Tech specialization in ML and AI.
-    Experienced in building ML models and data-driven solutions.
-  
+  backend_developer: |
+    Backend-focused Software Engineer with expertise in Java, Spring Boot,
+    Node.js, and REST API design. Strong background in JWT authentication,
+    RBAC architecture, and relational database performance tuning.
+
   full_stack: |
-    Full Stack Developer with comprehensive experience in building
-    end-to-end web applications using React.js, Spring Boot, and
-    microservices architecture.
+    Full Stack Software Engineer with experience building end-to-end web
+    applications using React, Spring Boot, Node.js/Express, and PostgreSQL/
+    MySQL, including payment gateway integration and CI/CD deployment
+    pipelines.
+
+  software_engineer: |
+    Software Engineer with 2+ years of experience delivering production
+    backend services for marketplace and CRM platforms, including secure
+    authentication, scalable REST APIs, and database optimization.
