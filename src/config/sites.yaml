@@ -1,0 +1,25 @@
+# Site configurations for different job portals
+naukri:
+  name: "Naukri.com"
+  base_url: "https://www.naukri.com/"
+  login_url: "https://www.naukri.com/nlogin/login"
+  search_url: "https://www.naukri.com/"
+  selectors:
+    login_btn: "a:has-text('Login'), .loginButton"
+    username: "input#usernameField, input[name='username']"
+    password: "input#passwordField, input[name='password']"
+    submit_btn: "button[type='submit']"
+    search_input: "input[title='Search'], input.search-job"
+    location_input: "input[title='Location'], input.location"
+    search_btn: "button[type='submit']"
+    job_card: "article.jobTuple, .jobCard, .job-list-card"
+    job_title: ".title a, .job-title"
+    company_name: ".subTitle, .company"
+    job_location: ".loc, .location"
+    apply_btn: "button:has-text('Apply')"
+  
+linkedin:
+  name: "LinkedIn"
+  base_url: "https://www.linkedin.com/"
+  login_url: "https://www.linkedin.com/login"
+  # ... etc

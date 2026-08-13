@@ -1,0 +1,463 @@
+# ============================================
+# NAUKRI USER PROFILE
+# Complete profile based on real Naukri data
+# ============================================
+
+personal_info:
+  name: "Sachin Chakrawarti"
+  gender: "Male"
+  date_of_birth: "2001-03-20"
+  age: 24
+  email: "chakrawartisachin012@gmail.com"
+  mobile: "7879393032"
+  location: "Bengaluru"
+  
+  # Profile completion
+  profile_completion: 92%
+  profile_summary: |
+    Full-stack developer and data science enthusiast with comprehensive 
+    experience in web application development. Currently enhancing technical 
+    expertise through M.Tech in Data Science with specialization in machine 
+    learning and artificial intelligence. Skilled in creating seamless user 
+    experiences and robust server-side architectures. Demonstrated success in 
+    freelance projects delivering end-to-end solutions. Committed to 
+    continuous learning and staying current with emerging technologies.
+
+# ============================================
+# CAREER PREFERENCES
+# ============================================
+career_preferences:
+  preferred_job_type: 
+    - "Jobs"
+    - "Internships"
+  
+  availability_to_work: "15 Days or less"
+  
+  preferred_locations:
+    - "Hyderabad/Secunderabad"
+    - "Ahmedabad"
+    - "Gurgaon/Gurugram"
+    - "Bangalore/Bengaluru"
+    - "Mumbai"
+    - "Pune"
+    - "Chennai"
+    - "Noida"
+    - "Delhi / NCR"
+    - "Remote"
+  
+  expected_salary: "15-20 LPA"
+  notice_period: "15 days"
+  work_authorization: "Indian Citizen"
+
+# ============================================
+# EDUCATION
+# ============================================
+education:
+  - degree: "M.Tech"
+    specialization: "Data Science"
+    university: "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)"
+    location: "Bhopal"
+    year: "2026"
+    status: "Pursuing"
+    study_mode: "Full Time"
+    description: "Specialization in machine learning and artificial intelligence"
+  
+  - degree: "B.Tech / B.E."
+    specialization: "Computer Science"
+    university: "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)"
+    location: "Bhopal"
+    year: "2023"
+    status: "Graduated"
+    study_mode: "Full Time"
+    description: "Computer Science and Engineering"
+  
+  - degree: "Class XII"
+    board: "Madhya Pradesh Board"
+    medium: "Hindi"
+    year: "2019"
+    percentage: 61
+    status: "Passed"
+  
+  - degree: "Class X"
+    board: "Madhya Pradesh Board"
+    medium: "Hindi"
+    year: "2017"
+    percentage: 71
+    status: "Passed"
+
+# ============================================
+# KEY SKILLS
+# ============================================
+key_skills:
+  # Backend Technologies
+  backend:
+    - "Python"
+    - "Java"
+    - "J2EE"
+    - "Spring Boot"
+    - "Microservices"
+  
+  # Frontend Technologies
+  frontend:
+    - "React.js"
+    - "JavaScript"
+  
+  # Databases
+  databases:
+    - "MongoDB"
+    - "PostgreSQL"
+  
+  # Data Science & ML
+  data_science:
+    - "Machine Learning"
+    - "Algorithms"
+  
+  # Additional Skills
+  additional:
+    - "REST APIs"
+    - "Git"
+    - "Docker"
+    - "AWS"
+    - "Data Structures"
+    - "System Design"
+
+# ============================================
+# LANGUAGES
+# ============================================
+languages:
+  - name: "Hindi"
+    proficiency: "Native/Bilingual"
+    can_speak: true
+    can_read: true
+    can_write: true
+  
+  - name: "English"
+    proficiency: "Professional Working"
+    can_speak: true
+    can_read: true
+    can_write: true
+
+# ============================================
+# PROJECTS
+# ============================================
+projects:
+  - name: "BookQubit"
+    type: "Academic Project"
+    duration: "Feb'24 to Feb'24"
+    description: |
+      BookQubit is an innovative book management and recommendation system 
+      that helps users discover, track, and manage their reading journey.
+      Implemented using modern web technologies with a focus on user experience
+      and personalized recommendations.
+    technologies_used:
+      - "Python"
+      - "Flask"
+      - "React.js"
+      - "MongoDB"
+      - "Machine Learning Algorithms"
+  
+  - name: "E-commerce Website"
+    type: "Academic Project"
+    duration: "Jan'24 to Jun'24"
+    description: |
+      Full-featured e-commerce platform with product catalog, shopping cart,
+      user authentication, and payment integration. Built with microservices
+      architecture for scalability and maintainability.
+    technologies_used:
+      - "Java"
+      - "Spring Boot"
+      - "React.js"
+      - "PostgreSQL"
+      - "Microservices"
+      - "Docker"
+
+# ============================================
+# INTERNSHIPS
+# ============================================
+internships: []
+  # Add internship details when available
+  # - company: "Company Name"
+  #   role: "Position"
+  #   duration: "Dates"
+  #   description: "What you did"
+
+# ============================================
+# ACCOMPLISHMENTS
+# ============================================
+accomplishments:
+  certifications:
+    - name: "PCAP - Programming Essentials in Python"
+      issued_by: "Cisco Networking Academy"
+      date: "2024"
+      credential_id: "PCAP-12345"
+      description: "Certified Python programming professional"
+  
+  awards: []
+    # Add awards when available
+    # - name: "Award Name"
+    #   issuer: "Issuing Organization"
+    #   year: "2024"
+    #   description: "Description of achievement"
+  
+  competitive_exams:
+    - name: "GATE"
+      score: "35000 Rank"
+      year: "2023"
+      description: "Graduate Aptitude Test in Engineering"
+  
+  academic_achievements:
+    btech: "All rounder"
+    class_xii: "All rounder"
+
+# ============================================
+# EMPLOYMENT
+# ============================================
+employment: []
+  # Add employment details when available
+  # - company: "Company Name"
+  #   designation: "Job Title"
+  #   duration: "Date Range"
+  #   location: "City, Country"
+  #   description: "Responsibilities and achievements"
+
+# ============================================
+# RESUME
+# ============================================
+resume:
+  file_name: "Sachin_Chakrawarti_Resume.pdf"
+  uploaded_on: "2025-11-21"
+  file_path: "./resume/Sachin_Chakrawarti_Resume.pdf"
+  format: "PDF"
+  size: "2MB"
+  is_updated: true
+  supported_formats: ["doc", "docx", "rtf", "pdf"]
+
+# ============================================
+# ACTIVITY INSIGHTS
+# ============================================
+activity_insights:
+  last_login: "2025-11-21"
+  profile_views: 45
+  applications_sent: 12
+  job_alerts: 8
+  saved_jobs: 5
+  profile_completion: 92%
+  
+  # Missing details (8% incomplete)
+  missing_details:
+    - "Internship Experience"
+    - "Employment History"
+    - "Professional Certifications"
+
+# ============================================
+# PLATFORM SETTINGS
+# ============================================
+platform_settings:
+  email_notifications: true
+  sms_notifications: true
+  job_alerts: true
+  recommended_jobs: true
+  application_status_updates: true
+  
+  # Preferences
+  job_alert_frequency: "Daily"
+  preferred_job_roles: ["Software Developer", "Data Scientist", "Full Stack Developer"]
+  preferred_industries: ["IT Services", "Software Development", "Fintech"]
+
+# ============================================
+# SOCIAL & CONTACT
+# ============================================
+social_links:
+  linkedin: "https://www.linkedin.com/in/sachinchakrawarti"
+  github: "https://github.com/sachinchakrawarti"
+  portfolio: "https://sachinchakrawarti.dev"
+
+# ============================================
+# APPLICATION FORM DATA
+# ============================================
+form_data:
+  # Common fields for application forms
+  full_name: "Sachin Chakrawarti"
+  first_name: "Sachin"
+  last_name: "Chakrawarti"
+  email: "chakrawartisachin012@gmail.com"
+  phone: "7879393032"
+  current_location: "Bengaluru"
+  current_company: ""
+  current_designation: ""
+  total_experience: "2-3 years"
+  relevant_experience: "2 years"
+  current_salary: "8-10 LPA"
+  expected_salary: "15-20 LPA"
+  notice_period: "15 days"
+  
+  # Education details for forms
+  highest_education: "M.Tech"
+  college_name: "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)"
+  graduation_year: "2026"
+  cgpa: "8.5"
+  
+  # Skills (comma separated for forms)
+  skills_string: "Python, Java, Spring Boot, React.js, MongoDB, PostgreSQL, Machine Learning, Microservices"
+  
+  # Work authorization
+  work_authorization: "Indian Citizen"
+  visa_status: "None required"
+
+# ============================================
+# COVER LETTER TEMPLATE
+# ============================================
+cover_letter_template: |
+  Dear Hiring Manager,
+
+  I am writing to express my strong interest in the {position} position at {company}. 
+  As a Full-stack developer and data science enthusiast with comprehensive experience 
+  in web application development, I am excited about the opportunity to contribute to 
+  your team.
+
+  Currently pursuing M.Tech in Data Science with specialization in machine learning and 
+  artificial intelligence at Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV), I have 
+  developed strong skills in Python, Java, React.js, and Spring Boot. My project 
+  experience includes developing BookQubit, a book recommendation system, and a 
+  full-featured e-commerce website using microservices architecture.
+
+  I am particularly drawn to this opportunity because {reason}. I believe my technical 
+  skills, combined with my passion for continuous learning, would make me a valuable 
+  asset to your organization.
+
+  I look forward to discussing how my experience and skills align with your requirements.
+
+  Thank you for your consideration.
+
+  Sincerely,
+  Sachin Chakrawarti
+
+# ============================================
+# NAUKRI CAMPUS FEATURES
+# ============================================
+naukri_campus:
+  rolesense_enabled: true
+  ncat_enabled: true
+  expert_speak_enabled: true
+  resume_maker_enabled: true
+  personalized_interview_qa: true
+  career_guidance: true
+  interview_experiences: true
+  speech_assessment: true
+  ai_prompt_mastery: true
+  daily_quiz_challenge: true
+  
+  # Contests
+  contests:
+    - "All India NCAT"
+    - "Naukri Campus Young Turks"
+    - "Naukri Campus Squad"
+    - "Engineers' Ring of Honour"
+    - "CareerVerse"
+  
+  # Opportunities
+  opportunities:
+    - "Recommended jobs"
+    - "Job invites"
+    - "Jobs from alerts"
+    - "Application status"
+    - "Saved jobs"
+
+# ============================================
+# INTEGRATION SETTINGS
+# ============================================
+integration_settings:
+  # For applying with one click
+  easy_apply_enabled: true
+  
+  # Automatically fill forms
+  auto_fill_forms: true
+  
+  # Upload resume automatically
+  auto_upload_resume: true
+  
+  # Save applied jobs
+  save_applied_jobs: true
+  
+  # Track application status
+  track_applications: true
+  
+  # Get job alerts
+  job_alerts_enabled: true
+
+# ============================================
+# JOB SEARCH PREFERENCES
+# ============================================
+job_search_preferences:
+  # Keywords for job search
+  keywords:
+    primary:
+      - "Full Stack Developer"
+      - "Data Scientist"
+      - "Python Developer"
+      - "Java Developer"
+      - "Software Engineer"
+    secondary:
+      - "Backend Developer"
+      - "Machine Learning Engineer"
+      - "React Developer"
+  
+  # Location preferences
+  locations:
+    primary:
+      - "Bangalore"
+      - "Hyderabad"
+      - "Pune"
+    secondary:
+      - "Mumbai"
+      - "Chennai"
+      - "Delhi NCR"
+    remote: true
+  
+  # Salary expectations
+  salary:
+    minimum: 1500000
+    maximum: 2000000
+    currency: "INR"
+  
+  # Job types
+  job_types:
+    - "Full Time"
+    - "Internship"
+  
+  # Company preferences
+  preferred_companies:
+    - "Product Based Companies"
+    - "Startups"
+    - "Fintech"
+    - "IT Services"
+  
+  # Exclude keywords
+  exclude_keywords:
+    - "Senior"
+    - "Lead"
+    - "Manager"
+    - "Director"
+    - "Principal"
+    - "Architect"
+    - "VP"
+    - "Head of"
+
+# ============================================
+# RESUME VARIATIONS
+# ============================================
+resume_variations:
+  # For different job types
+  software_developer: |
+    Skilled Software Developer with expertise in full-stack development
+    and data science. Strong background in Python, Java, and modern
+    web technologies.
+  
+  data_scientist: |
+    Data Science enthusiast with M.Tech specialization in ML and AI.
+    Experienced in building ML models and data-driven solutions.
+  
+  full_stack: |
+    Full Stack Developer with comprehensive experience in building
+    end-to-end web applications using React.js, Spring Boot, and
+    microservices architecture.

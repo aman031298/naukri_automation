@@ -1,0 +1,30 @@
+# Run once
+python src/main.py
+
+# Or use run script
+python scripts/run.py
+
+# Clean old reports
+python scripts/cleanup.py
+
+
+# 1. Activate virtual environment
+venv\Scripts\activate
+
+# 2. Run validation
+python -c "from src.config.validator import ConfigValidator; ConfigValidator.validate_all()"
+
+# 3. Run automation
+python run.py
+
+# 4. Run scheduler (for daily automation)
+python scheduler.py
+
+# 5. Run with debug
+python run_debug.py
+
+# 6. Test components
+python test_components.py
+
+# 7. Test report
+python test_report.py

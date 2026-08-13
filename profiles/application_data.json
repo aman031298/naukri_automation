@@ -1,0 +1,38 @@
+{
+  "personal_info": {
+    "name": "Sachin Chakrawarti",
+    "email": "chakrawartisachin012@gmail.com",
+    "phone": "7879393032",
+    "location": "Bengaluru",
+    "gender": "Male",
+    "date_of_birth": "2001-03-20"
+  },
+  "education": {
+    "highest_degree": "M.Tech",
+    "field_of_study": "Data Science",
+    "university": "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)",
+    "graduation_year": 2026,
+    "cgpa": 8.5
+  },
+  "skills": [
+    "Python",
+    "Java",
+    "Spring Boot",
+    "React.js",
+    "MongoDB",
+    "PostgreSQL",
+    "Machine Learning",
+    "Microservices"
+  ],
+  "experience": {
+    "years": 2.5,
+    "current_role": "Full Stack Developer",
+    "previous_roles": []
+  },
+  "preferences": {
+    "job_type": ["Full Time", "Internship"],
+    "locations": ["Bangalore", "Hyderabad", "Pune", "Remote"],
+    "notice_period": "15 days",
+    "salary_expectation": "15-20 LPA"
+  }
+}

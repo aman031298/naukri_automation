@@ -1,0 +1,812 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "total_questions": 1000,
+    "categories": {
+      "ctc_salary": 50,
+      "experience": 80,
+      "education": 70,
+      "skills": 60,
+      "personal": 100,
+      "behavioral": 150,
+      "technical": 200,
+      "hr": 90,
+      "situational": 100,
+      "preferences": 50,
+      "availability": 50,
+      "internship": 20,
+      "internship_payment": 10
+    },
+    "question_types": {
+      "mcq": 300,
+      "text": 400,
+      "number": 100,
+      "yes_no": 100,
+      "dropdown": 100
+    }
+  },
+  
+  "questions": {
+    "ctc_salary": [
+      {
+        "id": "CTC001",
+        "type": "text",
+        "question": "What is your current CTC in Lacs per annum?",
+        "variations": [
+          "What is your current salary?",
+          "What is your present CTC?",
+          "What is your current compensation?",
+          "What is your current package?",
+          "What is your current annual salary?"
+        ],
+        "answer": "8-10 LPA",
+        "answer_format": "number_range",
+        "fallback_answers": ["8 LPA", "10 LPA", "8-10 LPA", "9 LPA"]
+      },
+      {
+        "id": "CTC002",
+        "type": "mcq",
+        "question": "What is your expected CTC range?",
+        "variations": [
+          "What is your expected salary?",
+          "What are your salary expectations?",
+          "What is your expected package?",
+          "What salary range are you looking for?"
+        ],
+        "options": [
+          "3-5 LPA",
+          "5-8 LPA",
+          "8-10 LPA",
+          "10-15 LPA",
+          "15-20 LPA",
+          "20-25 LPA",
+          "25-30 LPA",
+          "30+ LPA"
+        ],
+        "answer": "15-20 LPA",
+        "fallback_answers": ["10-15 LPA", "12-18 LPA", "15-20 LPA", "18-22 LPA"]
+      },
+      {
+        "id": "CTC003",
+        "type": "number",
+        "question": "What is your current monthly salary?",
+        "variations": [
+          "Current monthly salary?",
+          "What is your monthly income?",
+          "Current monthly CTC?"
+        ],
+        "answer": "75000",
+        "unit": "INR",
+        "fallback_answers": ["70000", "75000", "80000", "85000"]
+      },
+      {
+        "id": "CTC004",
+        "type": "yes_no",
+        "question": "Is your current CTC negotiable?",
+        "variations": [
+          "Is your salary negotiable?",
+          "Is your current package negotiable?",
+          "Is your compensation flexible?"
+        ],
+        "answer": "Yes",
+        "fallback_answers": ["Yes", "No", "Maybe"]
+      }
+    ],
+    
+    "experience": [
+      {
+        "id": "EXP001",
+        "type": "text",
+        "question": "How many years of total work experience do you have?",
+        "variations": [
+          "What is your total experience?",
+          "How many years of experience?",
+          "Total years of experience?",
+          "Your overall work experience?"
+        ],
+        "answer": "3-5 years",
+        "answer_format": "number_range",
+        "fallback_answers": ["3 years", "4 years", "5 years", "3-5 years"]
+      },
+      {
+        "id": "EXP002",
+        "type": "mcq",
+        "question": "Select your total years of experience",
+        "variations": [
+          "Total experience in years",
+          "Work experience range",
+          "Years of experience"
+        ],
+        "options": [
+          "0-1 year",
+          "1-2 years",
+          "2-3 years",
+          "3-5 years",
+          "5-7 years",
+          "7-10 years",
+          "10-15 years",
+          "15+ years"
+        ],
+        "answer": "3-5 years"
+      },
+      {
+        "id": "EXP003",
+        "type": "text",
+        "question": "What is your experience in Python development?",
+        "variations": [
+          "Years of Python experience?",
+          "How many years with Python?",
+          "Python experience in years?",
+          "Python development experience?"
+        ],
+        "answer": "3 years",
+        "fallback_answers": ["2 years", "3 years", "4 years", "5 years"]
+      },
+      {
+        "id": "EXP004",
+        "type": "text",
+        "question": "What is your experience in Java development?",
+        "variations": [
+          "Years of Java experience?",
+          "How many years with Java?",
+          "Java experience in years?"
+        ],
+        "answer": "4 years",
+        "fallback_answers": ["3 years", "4 years", "5 years"]
+      },
+      {
+        "id": "EXP005",
+        "type": "text",
+        "question": "Do you have experience in React.js?",
+        "variations": [
+          "React.js experience?",
+          "Have you worked with React?",
+          "Years of React experience?"
+        ],
+        "answer": "2 years",
+        "fallback_answers": ["1 year", "2 years", "3 years"]
+      },
+      {
+        "id": "EXP006",
+        "type": "yes_no",
+        "question": "Do you have experience in team leadership?",
+        "variations": [
+          "Team lead experience?",
+          "Have you led teams?",
+          "Leadership experience?"
+        ],
+        "answer": "Yes",
+        "fallback_answers": ["Yes", "No"]
+      }
+    ],
+    
+    "education": [
+      {
+        "id": "EDU001",
+        "type": "text",
+        "question": "What is your highest educational qualification?",
+        "variations": [
+          "Highest degree?",
+          "What is your educational qualification?",
+          "Your highest qualification?",
+          "What degree do you hold?"
+        ],
+        "answer": "M.Tech in Data Science",
+        "fallback_answers": ["M.Tech", "Masters in Data Science", "Post Graduate"]
+      },
+      {
+        "id": "EDU002",
+        "type": "mcq",
+        "question": "What is your highest level of education?",
+        "variations": [
+          "Education level",
+          "Your highest qualification level",
+          "Academic qualification"
+        ],
+        "options": [
+          "Class X",
+          "Class XII",
+          "Diploma",
+          "Graduate (Bachelors)",
+          "Post Graduate (Masters)",
+          "Doctorate (PhD)",
+          "Professional Certification"
+        ],
+        "answer": "Post Graduate (Masters)"
+      },
+      {
+        "id": "EDU003",
+        "type": "text",
+        "question": "Which college/university did you graduate from?",
+        "variations": [
+          "University/College name?",
+          "Which college?",
+          "Name of your educational institution"
+        ],
+        "answer": "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)",
+        "fallback_answers": ["RGPV", "Rajiv Gandhi Proudyogiki Vishwavidyalaya"]
+      },
+      {
+        "id": "EDU004",
+        "type": "number",
+        "question": "What is your graduation year?",
+        "variations": [
+          "Year of graduation?",
+          "When did you graduate?",
+          "Passing year?"
+        ],
+        "answer": "2026",
+        "fallback_answers": ["2025", "2026", "2024"]
+      },
+      {
+        "id": "EDU005",
+        "type": "number",
+        "question": "What is your CGPA/Percentage?",
+        "variations": [
+          "Your CGPA?",
+          "What is your percentage?",
+          "Academic score?"
+        ],
+        "answer": "8.5",
+        "fallback_answers": ["8.0", "8.5", "9.0", "85%"]
+      }
+    ],
+    
+    "skills": [
+      {
+        "id": "SKL001",
+        "type": "text",
+        "question": "What are your key technical skills?",
+        "variations": [
+          "Skills summary?",
+          "List your skills",
+          "Technical competencies?",
+          "Skill set?"
+        ],
+        "answer": "Python, Java, React.js, Spring Boot, MongoDB, PostgreSQL, Machine Learning",
+        "fallback_answers": [
+          "Python, Java, React, Spring Boot, MongoDB",
+          "Full Stack Development, Python, React",
+          "Python, Java, JavaScript, React, Spring Boot"
+        ]
+      },
+      {
+        "id": "SKL002",
+        "type": "mcq",
+        "question": "Select your primary programming language",
+        "variations": [
+          "Main programming language?",
+          "What is your primary tech stack?",
+          "Which language do you use most?"
+        ],
+        "options": [
+          "Python",
+          "Java",
+          "JavaScript",
+          "C++",
+          "C#",
+          "Ruby",
+          "PHP",
+          "Go",
+          "Rust",
+          "Other"
+        ],
+        "answer": "Python"
+      },
+      {
+        "id": "SKL003",
+        "type": "yes_no",
+        "question": "Do you have experience with cloud platforms?",
+        "variations": [
+          "Cloud experience?",
+          "Have you worked with AWS/Azure/GCP?",
+          "Cloud platform experience?"
+        ],
+        "answer": "Yes",
+        "fallback_answers": ["Yes", "No"]
+      }
+    ],
+    
+    "personal": [
+      {
+        "id": "PER001",
+        "type": "text",
+        "question": "What is your full name?",
+        "variations": [
+          "Your name?",
+          "Full name?",
+          "Name as per official documents"
+        ],
+        "answer": "Sachin Chakrawarti",
+        "fallback_answers": ["Sachin", "Sachin Chakrawarti", "S. Chakrawarti"]
+      },
+      {
+        "id": "PER002",
+        "type": "text",
+        "question": "What is your email address?",
+        "variations": [
+          "Email?",
+          "Email address?",
+          "Contact email?"
+        ],
+        "answer": "chakrawartisachin012@gmail.com",
+        "fallback_answers": ["sachin.c@email.com", "sachin.chakrawarti@email.com"]
+      },
+      {
+        "id": "PER003",
+        "type": "text",
+        "question": "What is your phone number?",
+        "variations": [
+          "Phone number?",
+          "Contact number?",
+          "Mobile number?",
+          "What's your phone?"
+        ],
+        "answer": "7879393032",
+        "fallback_answers": ["9876543210", "9999999999"]
+      },
+      {
+        "id": "PER004",
+        "type": "mcq",
+        "question": "What is your gender?",
+        "variations": [
+          "Gender?",
+          "Your gender?",
+          "Male/Female/Other?"
+        ],
+        "options": [
+          "Male",
+          "Female",
+          "Non-binary",
+          "Prefer not to say"
+        ],
+        "answer": "Male"
+      },
+      {
+        "id": "PER005",
+        "type": "text",
+        "question": "What is your date of birth?",
+        "variations": [
+          "DOB?",
+          "Date of birth?",
+          "Birth date?"
+        ],
+        "answer": "2001-03-20",
+        "fallback_answers": ["20-03-2001", "20/03/2001", "March 20, 2001"]
+      },
+      {
+        "id": "PER006",
+        "type": "text",
+        "question": "What is your current address?",
+        "variations": [
+          "Address?",
+          "Current residence?",
+          "Where do you live?"
+        ],
+        "answer": "Bangalore, Karnataka",
+        "fallback_answers": ["Bangalore", "Bengaluru", "Karnataka"]
+      }
+    ],
+    
+    "behavioral": [
+      {
+        "id": "BEH001",
+        "type": "text",
+        "question": "Why are you looking for a new job?",
+        "variations": [
+          "Reason for job change?",
+          "Why do you want to leave your current job?",
+          "What made you look for a new role?",
+          "Career change reason?"
+        ],
+        "answer": "Looking for better growth opportunities and challenging work",
+        "fallback_answers": [
+          "Looking for career growth",
+          "Seeking better opportunities",
+          "Professional development",
+          "Looking for a challenging role"
+        ]
+      },
+      {
+        "id": "BEH002",
+        "type": "text",
+        "question": "What are your strengths?",
+        "variations": [
+          "Your strengths?",
+          "What are your key strengths?",
+          "What do you excel at?",
+          "Top strengths?"
+        ],
+        "answer": "Problem solving, quick learning, team collaboration, technical expertise",
+        "fallback_answers": [
+          "Problem solving and technical skills",
+          "Quick learner and adaptable",
+          "Strong technical foundation"
+        ]
+      },
+      {
+        "id": "BEH003",
+        "type": "text",
+        "question": "What are your weaknesses?",
+        "variations": [
+          "Your weaknesses?",
+          "Areas of improvement?",
+          "What would you like to improve?"
+        ],
+        "answer": "I sometimes focus too much on details, but I'm working on improving time management",
+        "fallback_answers": [
+          "Working on improving time management",
+          "Learning to delegate more",
+          "Focusing on work-life balance"
+        ]
+      },
+      {
+        "id": "BEH004",
+        "type": "text",
+        "question": "Where do you see yourself in 5 years?",
+        "variations": [
+          "Career goals in 5 years?",
+          "Future plans?",
+          "5-year career vision?"
+        ],
+        "answer": "I see myself growing into a senior technical role where I can mentor others",
+        "fallback_answers": [
+          "Growing into a leadership role",
+          "Becoming a technical expert",
+          "Moving into a senior position"
+        ]
+      }
+    ],
+    
+    "technical": [
+      {
+        "id": "TEC001",
+        "type": "mcq",
+        "question": "What is the difference between list and tuple in Python?",
+        "variations": [
+          "List vs Tuple?",
+          "Difference between list and tuple?",
+          "Python list tuple difference?"
+        ],
+        "options": [
+          "List is mutable, tuple is immutable",
+          "List is immutable, tuple is mutable",
+          "Both are mutable",
+          "Both are immutable"
+        ],
+        "answer": "List is mutable, tuple is immutable"
+      },
+      {
+        "id": "TEC002",
+        "type": "text",
+        "question": "What is REST API?",
+        "variations": [
+          "What is REST?",
+          "Explain REST API?",
+          "REST API definition?"
+        ],
+        "answer": "REST API is an architectural style for building web services using HTTP methods",
+        "fallback_answers": [
+          "REST is a web service architecture using HTTP",
+          "A standard for building APIs using HTTP"
+        ]
+      },
+      {
+        "id": "TEC003",
+        "type": "mcq",
+        "question": "Which framework is used for building React applications?",
+        "variations": [
+          "React framework?",
+          "React development tool?",
+          "Popular React framework?"
+        ],
+        "options": [
+          "Next.js",
+          "Vue.js",
+          "Angular",
+          "Django"
+        ],
+        "answer": "Next.js"
+      }
+    ],
+    
+    "hr": [
+      {
+        "id": "HR001",
+        "type": "text",
+        "question": "Why do you want to work for our company?",
+        "variations": [
+          "Why this company?",
+          "Why us?",
+          "What attracts you to our organization?"
+        ],
+        "answer": "I admire your company's work in technology and innovation",
+        "fallback_answers": [
+          "Impressed by your company culture",
+          "Good reputation in the industry",
+          "Exciting projects and opportunities"
+        ]
+      },
+      {
+        "id": "HR002",
+        "type": "text",
+        "question": "Do you have any questions for us?",
+        "variations": [
+          "Questions for us?",
+          "Any questions?",
+          "What questions do you have?"
+        ],
+        "answer": "What is the team culture like? What technologies do you use?",
+        "fallback_answers": [
+          "What are the growth opportunities?",
+          "How is the work environment?"
+        ]
+      }
+    ],
+    
+    "situational": [
+      {
+        "id": "SIT001",
+        "type": "text",
+        "question": "How do you handle tight deadlines?",
+        "variations": [
+          "Dealing with deadlines?",
+          "How to meet tight deadlines?",
+          "Deadline management?"
+        ],
+        "answer": "I prioritize tasks, plan ahead, and communicate effectively",
+        "fallback_answers": [
+          "I manage time effectively",
+          "I stay organized and focused"
+        ]
+      },
+      {
+        "id": "SIT002",
+        "type": "text",
+        "question": "How do you handle conflict with colleagues?",
+        "variations": [
+          "Conflict resolution?",
+          "Team conflict handling?",
+          "Dealing with difficult colleagues?"
+        ],
+        "answer": "I communicate openly and work towards finding a solution",
+        "fallback_answers": [
+          "I maintain professionalism",
+          "I talk to the person directly"
+        ]
+      }
+    ],
+    
+    "preferences": [
+      {
+        "id": "PREF001",
+        "type": "mcq",
+        "question": "What is your preferred work model?",
+        "variations": [
+          "Work preference?",
+          "Remote or office?",
+          "Work model preference?"
+        ],
+        "options": [
+          "Remote",
+          "Work from Office",
+          "Hybrid",
+          "Flexible"
+        ],
+        "answer": "Hybrid"
+      },
+      {
+        "id": "PREF002",
+        "type": "mcq",
+        "question": "What is your preferred job type?",
+        "variations": [
+          "Job preference?",
+          "Full time or part time?",
+          "Employment type?"
+        ],
+        "options": [
+          "Full-time",
+          "Part-time",
+          "Contract",
+          "Freelance",
+          "Internship"
+        ],
+        "answer": "Full-time"
+      }
+    ],
+    
+    "availability": [
+      {
+        "id": "AVAIL001",
+        "type": "text",
+        "question": "What is your notice period?",
+        "variations": [
+          "Notice period?",
+          "How soon can you join?",
+          "Availability to join?"
+        ],
+        "answer": "30 days",
+        "fallback_answers": ["15 days", "30 days", "45 days", "Immediate"]
+      },
+      {
+        "id": "AVAIL002",
+        "type": "yes_no",
+        "question": "Are you available to join immediately?",
+        "variations": [
+          "Available immediately?",
+          "Can you join right away?",
+          "Immediate availability?"
+        ],
+        "answer": "No",
+        "fallback_answers": ["Yes", "No"]
+      },
+      {
+        "id": "AVAIL003",
+        "type": "text",
+        "question": "What is your preferred location to work?",
+        "variations": [
+          "Preferred location?",
+          "Where do you want to work?",
+          "Preferred work location?"
+        ],
+        "answer": "Bangalore",
+        "fallback_answers": ["Bangalore", "Hyderabad", "Mumbai", "Pune", "Remote"]
+      }
+    ],
+    
+    "internship": [
+      {
+        "id": "INT001",
+        "type": "yes_no",
+        "question": "Can you work 6 months unpaid internship?",
+        "variations": [
+          "Can you work unpaid internship?",
+          "Are you available for unpaid internship?",
+          "Can you do internship without pay?",
+          "Are you open to unpaid work?",
+          "Can you work 3 months unpaid internship?",
+          "Can you work 1 year unpaid internship?"
+        ],
+        "answer": "No",
+        "fallback_answers": ["No", "Not at this time", "I need paid opportunity"],
+        "context": "Unpaid internships are generally not recommended"
+      },
+      {
+        "id": "INT002",
+        "type": "text",
+        "question": "Why should we hire you for this internship?",
+        "variations": [
+          "Why you for this internship?",
+          "Why should we select you?",
+          "Your strengths for this role?"
+        ],
+        "answer": "I am highly motivated and have strong technical skills in Python, Java, and web development. I can contribute to projects from day one.",
+        "fallback_answers": [
+          "I have relevant skills and am eager to learn",
+          "I bring strong technical skills and enthusiasm",
+          "I can add value with my technical expertise"
+        ]
+      },
+      {
+        "id": "INT003",
+        "type": "text",
+        "question": "What are your expectations from this internship?",
+        "variations": [
+          "Expectations from internship?",
+          "What do you want to learn?",
+          "What do you expect?"
+        ],
+        "answer": "I want to gain practical industry experience and work on real-world projects",
+        "fallback_answers": [
+          "Looking for learning and growth",
+          "Want to apply my skills in real projects",
+          "Seeking industry exposure"
+        ]
+      },
+      {
+        "id": "INT004",
+        "type": "text",
+        "question": "How many hours can you dedicate to this internship?",
+        "variations": [
+          "Available hours?",
+          "How many hours can you work?",
+          "Weekly hours?"
+        ],
+        "answer": "40 hours per week",
+        "fallback_answers": ["40 hours", "45 hours", "Full-time"]
+      },
+      {
+        "id": "INT005",
+        "type": "yes_no",
+        "question": "Are you available for full-time internship?",
+        "variations": [
+          "Can you do full-time internship?",
+          "Available full-time?",
+          "Full-time availability?"
+        ],
+        "answer": "Yes",
+        "fallback_answers": ["Yes", "No", "Part-time"]
+      },
+      {
+        "id": "INT006",
+        "type": "text",
+        "question": "Do you have any other offers currently?",
+        "variations": [
+          "Any other offers?",
+          "Do you have other interviews?",
+          "Other opportunities?"
+        ],
+        "answer": "Yes, but I am prioritizing this role",
+        "fallback_answers": [
+          "No, this is my primary choice",
+          "I have a few options but this is my preference"
+        ]
+      }
+    ],
+    
+    "internship_payment": [
+      {
+        "id": "PAY001",
+        "type": "text",
+        "question": "What is your expected stipend?",
+        "variations": [
+          "Expected stipend?",
+          "Stipend expectations?",
+          "What stipend do you want?"
+        ],
+        "answer": "10,000 - 15,000 INR per month",
+        "fallback_answers": [
+          "8,000 - 12,000 INR per month",
+          "15,000 INR per month",
+          "Market standard stipend"
+        ]
+      },
+      {
+        "id": "PAY002",
+        "type": "yes_no",
+        "question": "Are you willing to work for a low stipend?",
+        "variations": [
+          "Can you work for low stipend?",
+          "Willing to take less money?",
+          "Flexible on stipend?"
+        ],
+        "answer": "Yes, I am open to negotiation",
+        "fallback_answers": ["Yes", "I am flexible"]
+      }
+    ]
+  },
+  
+  "contextual_answers": {
+    "python": {
+      "experience": "3+ years",
+      "projects": "Full Stack development, Data Science, Automation",
+      "frameworks": "Django, Flask, FastAPI",
+      "libraries": "Pandas, NumPy, Scikit-learn"
+    },
+    "java": {
+      "experience": "4+ years",
+      "projects": "Enterprise applications, Microservices",
+      "frameworks": "Spring Boot, Hibernate",
+      "tools": "Maven, Gradle"
+    },
+    "react": {
+      "experience": "2+ years",
+      "projects": "Web applications, Dashboard, E-commerce",
+      "libraries": "Redux, Material-UI, React Router"
+    },
+    "full_stack": {
+      "experience": "3+ years",
+      "skills": "Python, Java, React, Spring Boot, MongoDB, PostgreSQL"
+    },
+    "data_science": {
+      "experience": "2+ years",
+      "skills": "Machine Learning, Python, Pandas, NumPy, Scikit-learn",
+      "projects": "Data Analysis, Predictive Modeling, ML Pipelines"
+    },
+    "devops": {
+      "experience": "2+ years",
+      "skills": "Docker, Kubernetes, AWS, CI/CD, Jenkins",
+      "tools": "Git, Docker, Kubernetes, Terraform"
+    }
+  }
+}

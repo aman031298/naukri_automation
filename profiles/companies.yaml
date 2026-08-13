@@ -1,0 +1,31 @@
+# Company preferences for job applications
+preferred_companies:
+  - name: "Google"
+    priority: 1
+    apply: true
+  
+  - name: "Microsoft"
+    priority: 2
+    apply: true
+  
+  - name: "Amazon"
+    priority: 3
+    apply: true
+  
+  - name: "Flipkart"
+    priority: 4
+    apply: true
+  
+  - name: "Paytm"
+    priority: 5
+    apply: true
+
+excluded_companies:
+  - "TCS"
+  - "Infosys"
+  - "Wipro"
+
+company_blacklist_keywords:
+  - "contract"
+  - "temporary"
+  - "walk-in"
