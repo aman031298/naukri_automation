@@ -14,9 +14,13 @@ COPY . .
 # a fresh container — Render's disk (if attached) mounts empty.
 RUN mkdir -p data logs reports db
 
-# Belt-and-suspenders: Render has no display, so force headless
+# Belt-and-suspenders: cloud hosts have no display, so force headless
 # regardless of what HEADLESS is set to in the dashboard.
 ENV HEADLESS=true
 ENV PYTHONUNBUFFERED=1
 
-CMD ["python", "run.py"]
+# scheduler.py stays resident and fires run.py at 09:00/18:00 daily —
+# this is one long-lived container rather than a separate cron
+# primitive, which matters on Railway where cron services bill a
+# worker continuously anyway (no savings vs. just staying up).
+CMD ["python", "scheduler.py"]
