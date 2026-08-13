@@ -1,0 +1,36 @@
+services:
+  - type: cron
+    name: naukri-automation
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    schedule: "0 9 * * *" # 9:00 AM UTC daily — adjust to your preferred run time
+    plan: starter
+    envVars:
+      - key: NAUKRI_EMAIL
+        sync: false
+      - key: NAUKRI_PASSWORD
+        sync: false
+      - key: JOB_KEYWORDS
+        value: "Python Developer,Full Stack Developer,Data Scientist"
+      - key: JOB_LOCATION
+        value: "Bangalore"
+      - key: EXCLUDE_KEYWORDS
+        value: "senior,lead,manager,director,principal"
+      - key: MAX_APPLICATIONS
+        value: "10"
+      - key: HEADLESS
+        value: "true"
+      - key: TIMEOUT
+        value: "30000"
+      - key: DB_PATH
+        value: "db/jobs_history.db"
+      - key: NOTIFICATIONS_ENABLED
+        value: "false"
+      - key: REPORT_DIR
+        value: "./reports"
+      - key: SAVE_REPORTS
+        value: "true"
+      - key: LOG_LEVEL
+        value: "INFO"
+      - key: LOG_DIR
+        value: "./logs"
