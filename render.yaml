@@ -3,7 +3,7 @@ services:
     name: naukri-automation
     runtime: docker
     dockerfilePath: ./Dockerfile
-    schedule: "0 9 * * *" # 9:00 AM UTC daily — adjust to your preferred run time
+    schedule: "0 9 * * *" # 9:00 AM UTC daily - adjust to your preferred run time
     plan: starter
     envVars:
       - key: NAUKRI_EMAIL

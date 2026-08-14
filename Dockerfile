@@ -19,8 +19,11 @@ RUN mkdir -p data logs reports db
 ENV HEADLESS=true
 ENV PYTHONUNBUFFERED=1
 
-# scheduler.py stays resident and fires run.py at 09:00/18:00 daily —
-# this is one long-lived container rather than a separate cron
-# primitive, which matters on Railway where cron services bill a
-# worker continuously anyway (no savings vs. just staying up).
-CMD ["python", "scheduler.py"]
+# One-shot entrypoint: run.py executes a single application pass and
+# exits. Render Cron Jobs start a fresh container per schedule tick
+# and require the process to exit on its own — a resident scheduler
+# loop (scheduler.py) never returns control, so Render would run it
+# until the 12h hard timeout on every trigger. Timing is owned by
+# render.yaml's `schedule` field instead of an in-process loop.
+# scheduler.py is kept in the repo for non-Render/self-hosted use.
+CMD ["python", "run.py"]
