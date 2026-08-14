@@ -25,7 +25,7 @@ python-dateutil==2.8.2
 sqlalchemy==2.0.23
 
 # Notifications
-plyer==0.9
+plyer==2.1.0
 
 # Analytics & Export
 openpyxl==3.1.2
