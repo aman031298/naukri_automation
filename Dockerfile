@@ -19,11 +19,14 @@ RUN mkdir -p data logs reports db
 ENV HEADLESS=true
 ENV PYTHONUNBUFFERED=1
 
-# One-shot entrypoint: run.py executes a single application pass and
-# exits. Render Cron Jobs start a fresh container per schedule tick
-# and require the process to exit on its own — a resident scheduler
-# loop (scheduler.py) never returns control, so Render would run it
-# until the 12h hard timeout on every trigger. Timing is owned by
-# render.yaml's `schedule` field instead of an in-process loop.
-# scheduler.py is kept in the repo for non-Render/self-hosted use.
-CMD ["python", "run.py"]
+# Deployed as a Render Web Service (free tier) rather than a Cron Job,
+# since Render Cron Jobs require payment info on file even on the
+# cheapest paid plan — free instances aren't offered for cron. server.py
+# is a small HTTP wrapper: GET / is a health check (and keeps/wakes the
+# free instance), POST /run-job starts one automation pass in a
+# background thread and returns immediately, emailing the result
+# instead of blocking the request for the several minutes real browser
+# automation takes. Trigger POST /run-job daily with any external free
+# scheduler (cron-job.org, GitHub Actions schedule, UptimeRobot, etc).
+# run.py and scheduler.py are kept for direct/self-hosted use.
+CMD ["python", "server.py"]

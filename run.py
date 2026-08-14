@@ -66,8 +66,8 @@ def check_requirements():
         return False
     return True
 
-def main():
-    """Main entry point"""
+def run_automation_once():
+    """Run one full automation pass. Returns 0 on success, 1 on failure."""
     print("="*60)
     print("🚀 Naukri Job Automation")
     print(f"📅 {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -140,4 +140,4 @@ def main():
         return 1
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(run_automation_once())

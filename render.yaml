@@ -1,14 +1,22 @@
 services:
-  - type: cron
+  - type: web
     name: naukri-automation
     runtime: docker
     dockerfilePath: ./Dockerfile
-    schedule: "0 9 * * *" # 9:00 AM UTC daily - adjust to your preferred run time
-    plan: starter
+    plan: free
+    healthCheckPath: /
     envVars:
       - key: NAUKRI_EMAIL
         sync: false
       - key: NAUKRI_PASSWORD
+        sync: false
+      - key: TRIGGER_TOKEN
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASSWORD
+        sync: false
+      - key: REPORT_EMAIL_TO
         sync: false
       - key: JOB_KEYWORDS
         value: "Python Developer,Full Stack Developer,Data Scientist"
