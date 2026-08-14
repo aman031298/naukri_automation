@@ -91,24 +91,38 @@ def run_automation_once():
     try:
         from src.automation.naukri_applier import NaukriApplier
         from src.browser.browser_manager import BrowserManager
+        from src.browser import screencast
         from src.utils.logger import setup_logger
         from src.utils.report_generator import ReportGenerator
         from src.config.settings import Config
-        
+
         logger = setup_logger()
-        
+
         # Initialize browser
         logger.info("Starting browser...")
         browser = BrowserManager(headless=Config.HEADLESS)
-        
+
         if not browser.start():
             logger.error("Failed to start browser")
             return 1
-        
+
+        cdp_session = None
+        if Config.HEADLESS:
+            # Only useful headless — a visible local browser is already
+            # its own live view.
+            try:
+                cdp_session = screencast.start(browser.page)
+            except Exception:
+                logger.exception("Failed to start screencast (continuing without live view)")
+
         # Run automation
-        applier = NaukriApplier(browser)
-        report = applier.run()
-        
+        try:
+            applier = NaukriApplier(browser)
+            report = applier.run()
+        finally:
+            if cdp_session:
+                screencast.stop(cdp_session)
+
         # Generate reports
         report_gen = ReportGenerator()
         report_files = report_gen.generate_all(report)
