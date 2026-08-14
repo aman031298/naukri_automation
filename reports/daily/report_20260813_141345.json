@@ -1,0 +1,232 @@
+{
+  "platform": "Naukri.com",
+  "timestamp": "2026-08-13T14:13:45.501046",
+  "summary": {
+    "total_found": 0,
+    "applied": 1,
+    "skipped": 11,
+    "failed": 8,
+    "total_processed": 20
+  },
+  "applied_jobs": [
+    {
+      "title": "Full Stack Developer (Cloud & Security)",
+      "company": "Arbor Mobility",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-cloud-security-arbor-mobility-bengaluru-3-to-6-years-300726028003",
+      "posted": "1 week ago",
+      "posted_days_ago": 7,
+      "status": "applied",
+      "applied_at": "2026-08-13T14:11:03.180591"
+    }
+  ],
+  "skipped_jobs": [
+    {
+      "title": "Full Stack Developer",
+      "company": "Godigi Infotech",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-godigi-infotech-bengaluru-0-to-1-years-110826502083",
+      "posted": "2 days ago",
+      "posted_days_ago": 2,
+      "status": "redirected_to_company_site",
+      "company_site_url": "https://www.godigiinfotech.com/job-detail/full-stack-developer/155",
+      "applied_at": "2026-08-13T14:09:47.092778"
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Apoxeo",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-apoxeo-solutions-private-limited-bengaluru-2-to-4-years-120826502715",
+      "posted": "1 day ago",
+      "posted_days_ago": 1,
+      "status": "redirected_to_company_site",
+      "company_site_url": "https://www.apoxeo.com/full-stack-developer.html",
+      "applied_at": "2026-08-13T14:10:41.951143"
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Tech Stalwart Solution",
+      "location": "Bengaluru, Pune, Mumbai, Hyderabad, New Delhi, Chennai, Kolkata",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-tech-stalwart-solution-private-limited-kolkata-mumbai-new-delhi-hyderabad-pune-chennai-bengaluru-0-to-3-years-040225508253",
+      "posted": "3+ weeks ago",
+      "posted_days_ago": null,
+      "status": "redirected_to_company_site",
+      "company_site_url": "https://techstalwartsolution.com/career.html?job_id=z5G7h3l6a1kMvyS65NP3c-aospOzFhCbXpk5TMt9cbg=",
+      "applied_at": "2026-08-13T14:11:12.746404"
+    },
+    {
+      "title": "Full Stack Developer - AI/ML Integration",
+      "company": "Metaplore Solutions",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-ai-ml-integration-metaplore-solutions-private-limited-bengaluru-2-to-3-years-050826505231",
+      "posted": "1 week ago",
+      "posted_days_ago": 7,
+      "status": "redirected_to_company_site",
+      "company_site_url": "https://metaplore.keka.com/careers/jobdetails/82998",
+      "applied_at": "2026-08-13T14:11:21.944772"
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Cloudthat Technologies",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-cloudthat-technologies-pvt-ltd-bengaluru-0-to-3-years-050826502674",
+      "posted": "1 week ago",
+      "posted_days_ago": 7,
+      "status": "redirected_to_company_site",
+      "company_site_url": "https://cloudthat.keka.com/careers/jobdetails/135346",
+      "applied_at": "2026-08-13T14:11:32.388934"
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Netlink Software",
+      "location": "Bengaluru, Pune, Mumbai, Hyderabad, New Delhi, Chennai, Kolkata",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-netlink-software-group-america-inc-kolkata-mumbai-new-delhi-hyderabad-pune-chennai-bengaluru-0-to-5-years-150125501603",
+      "posted": "3+ weeks ago",
+      "posted_days_ago": null,
+      "status": "redirected_to_company_site",
+      "company_site_url": "https://netlink.com/jobs/full-stack-developer/",
+      "applied_at": "2026-08-13T14:11:46.821105"
+    },
+    {
+      "title": "Full-Stack Developer",
+      "company": "Pvalue Solutions",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-pvalue-solutions-pvt-ltd-bengaluru-3-to-7-years-280425500153",
+      "posted": "3+ weeks ago",
+      "posted_days_ago": null,
+      "status": "redirected_to_company_site",
+      "company_site_url": "https://www.pvalue.co.in/bangalore/full-stack-developer-2/",
+      "applied_at": "2026-08-13T14:11:56.576339"
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Prgeeq Global Solutions",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-prgeeq-global-solutions-private-limited-bengaluru-2-to-6-years-270426503505",
+      "posted": "3+ weeks ago",
+      "posted_days_ago": null,
+      "status": "redirected_to_company_site",
+      "company_site_url": "https://prgeeq.com/careeres",
+      "applied_at": "2026-08-13T14:12:07.395328"
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Acefluency",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-acefluency-app-spoken-english-bengaluru-3-to-8-years-300126506071",
+      "posted": "3+ weeks ago",
+      "posted_days_ago": null,
+      "status": "redirected_to_company_site",
+      "company_site_url": "https://acefluency.com/careers/",
+      "applied_at": "2026-08-13T14:12:16.733077"
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Eximietas Design",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-eximietas-design-bengaluru-3-to-7-years-210526506802",
+      "posted": "3+ weeks ago",
+      "posted_days_ago": null,
+      "status": "redirected_to_company_site",
+      "company_site_url": "https://eximietas.design/careers/full-stack-developer/",
+      "applied_at": "2026-08-13T14:12:32.084962"
+    },
+    {
+      "title": "Full stack developer with React",
+      "company": "Krazy Mantra It",
+      "location": "Bengaluru, Pune, Mumbai, Hyderabad, New Delhi, Chennai, Kolkata",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-with-react-krazy-mantra-group-of-companies-kolkata-mumbai-new-delhi-hyderabad-pune-chennai-bengaluru-1-to-4-years-220425502837",
+      "posted": "3+ weeks ago",
+      "posted_days_ago": null,
+      "status": "redirected_to_company_site",
+      "company_site_url": "https://www.krazymantra.com/jobdetails.php?id=212",
+      "applied_at": "2026-08-13T14:12:43.187212"
+    }
+  ],
+  "failed_jobs": [
+    {
+      "title": "Azure Full Stack Developer",
+      "company": "JK Technology Services",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-azure-full-stack-developer-jk-technology-services-bengaluru-3-to-5-years-120826503419",
+      "posted": "1 day ago",
+      "posted_days_ago": 1,
+      "status": "error",
+      "error": "Timeout 30000ms exceeded."
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Twenty20 Systems",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-twenty20-systems-bengaluru-3-to-5-years-260626502269",
+      "posted": "3+ weeks ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Moshi Moshi",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-moshi-moshi-bengaluru-2-to-3-years-210125500165",
+      "posted": "3+ weeks ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Yugamjteam Technologies",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-yugamjteam-technologies-bengaluru-2-to-6-years-190724501403",
+      "posted": "3+ weeks ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Mavim International",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-mavim-international-bengaluru-2-to-6-years-090625500546",
+      "posted": "3+ weeks ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "Full stack developer",
+      "company": "Siart Design Systems",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-siart-design-systems-bengaluru-1-to-4-years-061125504558",
+      "posted": "3+ weeks ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "Full Stack Unity Developer",
+      "company": "Deepspatial",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-unity-developer-deepspatial-bengaluru-3-to-5-years-060826928680",
+      "posted": "6 days ago",
+      "posted_days_ago": 6,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "Integration Developer (Full-Stack)",
+      "company": "Sigma Allied Services",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-integration-developer-full-stack-sigma-allied-services-private-limited-bengaluru-0-to-4-years-050826503956",
+      "posted": "1 week ago",
+      "posted_days_ago": 7,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    }
+  ],
+  "search_keywords": [],
+  "search_location": "",
+  "duration_seconds": 0,
+  "duration": "N/A"
+}

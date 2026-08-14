@@ -1,0 +1,110 @@
+{
+  "platform": "Naukri.com",
+  "timestamp": "2026-08-13T16:29:27.189612",
+  "summary": {
+    "total_found": 10,
+    "applied": 0,
+    "skipped": 2,
+    "failed": 8,
+    "total_processed": 10
+  },
+  "applied_jobs": [],
+  "skipped_jobs": [
+    {
+      "title": "Full Stack Engineer",
+      "company": "1pharmacy Network",
+      "location": "Hyderabad",
+      "link": "https://www.naukri.com/job-listings-full-stack-engineer-1pharmacy-network-hyderabad-3-to-8-years-120826501130?src=drecomm_dashboard_apply",
+      "posted": "2h ago",
+      "posted_days_ago": null,
+      "status": "external_site"
+    },
+    {
+      "title": "Sr . Next . js / Node . js Developer",
+      "company": "Akra Tech",
+      "location": "Chennai",
+      "link": "https://www.naukri.com/job-listings-sr-next-js-node-js-developer-akra-tech-chennai-2-to-5-years-120826503640?src=drecomm_dashboard_apply",
+      "posted": "23h ago",
+      "posted_days_ago": null,
+      "status": "external_site"
+    }
+  ],
+  "failed_jobs": [
+    {
+      "title": "E Learning Developer || Storyline",
+      "company": "Niit Learning Systems",
+      "location": "Remote",
+      "link": "https://www.naukri.com/job-listings-e-learning-developer-storyline-niit-learning-systems-gurugram-2-to-7-years-210526018983?src=drecomm_dashboard_apply",
+      "posted": "12d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "Back End Developer",
+      "company": "Nxtwave Disruptive Technologies(Hiring for a client)",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-back-end-developer-nxtwave-disruptive-technologies-hiring-for-a-client-bengaluru-2-to-4-years-110826039852?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "Back End Developer",
+      "company": "Innovatione India",
+      "location": "Gurugram",
+      "link": "https://www.naukri.com/job-listings-back-end-developer-innovatione-india-gurugram-0-to-3-years-120826025751?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "Backend Developer - Node JS, PostgreSQL",
+      "company": "rigbot.com",
+      "location": "Hybrid - Bengaluru",
+      "link": "https://www.naukri.com/job-listings-backend-developer-node-js-postgresql-rigbot-solutions-private-limited-bengaluru-3-to-6-years-110826008662?src=drecomm_dashboard_apply",
+      "posted": "2d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "Front End Developer",
+      "company": "Odex India Solutions",
+      "location": "Mumbai",
+      "link": "https://www.naukri.com/job-listings-front-end-developer-odex-global-mumbai-2-to-5-years-120826920749?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "Software Engineer - Ui Path Developer",
+      "company": "Ecolab Global Services",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-software-engineer-ui-path-developer-ecolab-global-services-private-limited-bengaluru-1-to-5-years-120826935821?src=drecomm_dashboard_apply",
+      "posted": "23h ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "Mern Stack Developer",
+      "company": "Unify Technologies",
+      "location": "Hyderabad",
+      "link": "https://www.naukri.com/job-listings-mern-stack-developer-unify-technologies-hyderabad-0-to-2-years-110826009128?src=drecomm_dashboard_apply",
+      "posted": "2d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "Fullstack Developer",
+      "company": "Rudrabhishek Enterprises",
+      "location": "New Delhi, Noida, Delhi / NCR",
+      "link": "https://www.naukri.com/job-listings-fullstack-developer-rudrabhishek-enterprises-noida-new-delhi-delhi-ncr-2-to-3-years-100226035069?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    }
+  ],
+  "search_keywords": [],
+  "search_location": "",
+  "duration_seconds": 0,
+  "duration": "N/A"
+}

@@ -38,36 +38,169 @@ class FormFiller:
         try:
             logger.info("📝 Filling application form...")
             self.browser.human_delay(2, 3)
-            
+
+            # Naukri's native apply sometimes opens a chat-style screening
+            # question panel (single question, "Type message here..." box,
+            # its own Save button) instead of a traditional form. This has
+            # no "Submit" button at all, so it must be handled before
+            # falling through to the traditional-form path below.
+            if self._is_chat_panel_open():
+                return self._handle_chat_panel()
+
             # Handle any popup questions
             self._handle_popups()
-            
+
             # Handle resume upload (smart detection)
             if not self.resume_uploader.upload_resume():
                 logger.warning("⚠️ Resume upload failed, but continuing...")
-            
+
             # Handle recruiter questions
             if not self.question_handler.handle_questions():
                 logger.warning("⚠️ Some questions may not have been answered")
-            
+
             # Fill text inputs
             self._fill_text_inputs()
-            
+
             # Fill dropdowns
             self._fill_dropdowns()
-            
+
             # Handle radio buttons
             self._fill_radios()
-            
+
             # Check if there's a "Next" or "Continue" before submit
             self._handle_multi_step_form()
-            
+
+            # If clicking through the multi-step form revealed a chat
+            # panel as the final step, hand off to that handler too.
+            if self._is_chat_panel_open():
+                return self._handle_chat_panel()
+
+            # No form fields and no chat panel appeared at all — this can
+            # mean the native apply click was itself the complete
+            # submission (common for jobs with no screening questions),
+            # but it can just as easily mean the click silently failed to
+            # do anything. Absence of a form is not proof of success, so
+            # verify against the page's actual post-apply state (the
+            # button turns into a disabled green "Applied" pill) rather
+            # than assuming success by default.
+            if not self._has_any_form_fields():
+                if self._is_apply_confirmed():
+                    logger.info("✅ Apply button now shows 'Applied' — submission confirmed")
+                    return True
+                logger.warning("⚠️ No form/questions appeared, but 'Applied' state not confirmed either")
+                return False
+
             # Submit the application
             return self._submit()
-            
+
         except Exception as e:
             logger.error(f"Form filling failed: {str(e)}")
             return False
+
+    def _is_apply_confirmed(self) -> bool:
+        """Check whether the page shows Naukri's post-apply confirmation
+        state — the Apply button turning into a non-clickable 'Applied'
+        pill — rather than inferring success from the mere absence of a
+        form, which is also what an apply click that silently no-opped
+        would look like.
+        """
+        try:
+            applied_btn = self.page.locator("button:has-text('Applied')").first
+            if applied_btn.count() and applied_btn.is_visible():
+                return True
+
+            page_text = self.page.content().lower()
+            return any(phrase in page_text for phrase in [
+                "already applied", "application submitted", "you have applied"
+            ])
+        except Exception:
+            return False
+
+    def _is_chat_panel_open(self) -> bool:
+        """Detect Naukri's chat-style screening question panel"""
+        try:
+            return self.page.get_by_placeholder("Type message here...").first.is_visible()
+        except Exception:
+            return False
+
+    def _has_any_form_fields(self) -> bool:
+        """Check whether any traditional form field is present/visible"""
+        try:
+            for selector in ["input[type='text']", "input:not([type])", "select", "input[type='radio']"]:
+                if self.page.locator(selector).first.is_visible():
+                    return True
+            return False
+        except Exception:
+            return False
+
+    def _handle_chat_panel(self) -> bool:
+        """Answer and submit Naukri's chat-style screening question panel.
+
+        The panel asks one question at a time via a text box (placeholder
+        "Type message here...") with its own Save button that only
+        activates once text is entered. It can repeat for multiple
+        questions in sequence, so this loops until the panel closes or a
+        safety cap is hit.
+        """
+        try:
+            max_questions = 10
+            for _ in range(max_questions):
+                chat_input = self.page.get_by_placeholder("Type message here...").first
+                if not chat_input.is_visible():
+                    # The panel closing is necessary but not sufficient —
+                    # it also closes if something went wrong. Confirm the
+                    # actual post-apply page state before calling it a
+                    # success.
+                    if self._is_apply_confirmed():
+                        logger.info("✅ Chat panel closed and 'Applied' state confirmed")
+                        return True
+                    logger.warning("⚠️ Chat panel closed but 'Applied' state not confirmed")
+                    return False
+
+                question_text = self._get_chat_question_text()
+                answer = self.question_handler.get_answer_for_text(question_text)
+
+                chat_input.click()
+                chat_input.fill(answer)
+                self.browser.human_delay(0.5, 1)
+
+                # The Save button lives in the same panel as the input and
+                # is disabled/inert until text is entered — locate it by
+                # walking up from the input rather than a bare
+                # "button:has-text('Save')", which also matches the
+                # unrelated job-bookmark Save button elsewhere on the page.
+                save_btn = chat_input.locator(
+                    "xpath=ancestor::*[self::div or self::section][1]//button[contains(., 'Save')]"
+                ).first
+                if not save_btn.count():
+                    # Fall back to nearest Save button on the page —
+                    # still preferable to giving up outright.
+                    save_btn = self.page.locator("button:has-text('Save')").last
+
+                save_btn.click()
+                self.browser.human_delay(1.5, 2.5)
+
+            logger.warning("⚠️ Chat panel still open after max question attempts")
+            return False
+
+        except Exception as e:
+            logger.warning(f"Chat panel handling failed: {str(e)}")
+            return False
+
+    def _get_chat_question_text(self) -> str:
+        """Extract the current question text shown in the chat panel"""
+        try:
+            chat_input = self.page.get_by_placeholder("Type message here...").first
+            question_bubble = chat_input.locator(
+                "xpath=ancestor::*[self::div or self::section][2]//*[contains(@class, 'chatbot')][1]"
+            ).first
+            if question_bubble.count():
+                text = question_bubble.text_content()
+                if text:
+                    return text.strip()
+        except Exception:
+            pass
+        return ""
     
     def _handle_popups(self):
         """Handle popup dialogs in application form"""

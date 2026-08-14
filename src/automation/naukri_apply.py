@@ -17,9 +17,16 @@ class NaukriApply(BaseApplier):
         super().__init__(browser)
         self.form_filler = FormFiller(browser)
         
-        # Application specific selectors
+        # Application specific selectors.
+        # Naukri renders two distinct buttons that both contain the word
+        # "Apply": #apply-button (native, one-click) and
+        # #company-site-button ("Apply on company site", redirects off
+        # Naukri). Matching by id keeps these separate — a text-only
+        # selector like "button:has-text('Apply')" matches whichever one
+        # is visible first regardless of which flow it actually is.
         self.apply_selectors = {
-            'apply_btn': "button:has-text('Apply'), .apply-button, .apply-btn, button[class*='apply']",
+            'native_apply_btn': "#apply-button, button.apply-button",
+            'company_site_btn': "#company-site-button, button.company-site-button",
             'view_btn': "button:has-text('View & Apply'), .view-apply-btn",
         }
     
@@ -40,10 +47,21 @@ class NaukriApply(BaseApplier):
                 return False
             
             # Find and click apply button
-            if not self._click_apply_button(job):
+            click_result = self._click_apply_button(job)
+            if not click_result:
                 return False
-            
-            # Fill and submit form
+
+            if click_result == 'company_site':
+                # External application: Naukri redirects to the employer's
+                # own careers page, which the bot can't fill out generically.
+                # Skip without clicking through — the goal is applying to
+                # jobs Naukri can submit natively, not collecting redirects.
+                job['status'] = 'external_site'
+                self.skipped_jobs.append(job)
+                logger.info(f"⏭️ Skipped company-site apply for: {job['title']}")
+                return False
+
+            # Fill and submit form (native Naukri apply flow)
             if self.form_filler.fill_and_submit():
                 job['status'] = 'applied'
                 job['applied_at'] = datetime.now().isoformat()
@@ -81,42 +99,53 @@ class NaukriApply(BaseApplier):
         page_content = self.page.content().lower()
         return "already applied" in page_content or "application submitted" in page_content
     
-    def _click_apply_button(self, job: Dict) -> bool:
-        """Find and click the apply button"""
-        apply_btn = self.page.locator(self.apply_selectors['apply_btn']).first
-        if not apply_btn.count():
-            apply_btn = self.page.locator(self.apply_selectors['view_btn']).first
-        
-        if not apply_btn.count():
-            logger.warning(f"No apply button for {job['title']}")
-            job['status'] = 'no_apply_button'
-            self.skipped_jobs.append(job)
-            return False
-        
-        # Check if external site
-        btn_text = apply_btn.text_content().lower() if apply_btn.count() else ""
-        if "company site" in btn_text or "external" in btn_text:
-            logger.info(f"⏭️ External application: {job['title']}")
-            job['status'] = 'external_site'
-            self.skipped_jobs.append(job)
-            return False
-        
-        # Click apply
-        apply_btn.click()
-        self.human_delay(2, 4)
-        return True
+    def _click_apply_button(self, job: Dict):
+        """Find and click the apply button.
+
+        Returns 'native' if the one-click Naukri apply flow was used,
+        'company_site' if it redirected to the employer's own site,
+        or False if no usable button was found.
+        """
+        native_btn = self.page.locator(self.apply_selectors['native_apply_btn']).first
+        if native_btn.count() and native_btn.is_visible():
+            native_btn.click()
+            self.human_delay(2, 4)
+            return 'native'
+
+        company_btn = self.page.locator(self.apply_selectors['company_site_btn']).first
+        if company_btn.count() and company_btn.is_visible():
+            # Don't click it — this button redirects off Naukri to the
+            # employer's own site, which has no generic form the bot can
+            # fill. Report it as company_site without interacting further.
+            logger.info(f"⏭️ Company-site apply button for: {job['title']} (not clicking)")
+            return 'company_site'
+
+        view_btn = self.page.locator(self.apply_selectors['view_btn']).first
+        if view_btn.count() and view_btn.is_visible():
+            view_btn.click()
+            self.human_delay(2, 4)
+            return 'native'
+
+        logger.warning(f"No apply button for {job['title']}")
+        job['status'] = 'no_apply_button'
+        self.skipped_jobs.append(job)
+        return False
     
     def process_jobs(self, jobs: List[Dict]) -> Dict:
-        """Process multiple jobs"""
-        applied_count = 0
-        
+        """Process a batch of candidate jobs, applying to each in turn.
+
+        Stops early once max_applications *confirmed* applies have been
+        reached — self.total_applied only increments on a verified
+        success (see apply_to_job/form_filler), so a batch that's mostly
+        company-site skips or failed applies won't falsely count toward
+        the limit and cut the run short.
+        """
         for job in jobs:
-            if applied_count >= self.max_applications:
-                logger.info(f"📊 Reached daily limit: {self.max_applications}")
+            if self.total_applied >= self.max_applications:
+                logger.info(f"📊 Reached target of {self.max_applications} confirmed applications")
                 break
-            
+
             self.apply_to_job(job)
-            applied_count += 1
             self.human_delay(3, 6)
-        
+
         return self.generate_report()

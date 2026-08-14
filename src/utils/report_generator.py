@@ -130,8 +130,8 @@ class ReportGenerator:
             # Write CSV
             with open(filename, 'w', newline='', encoding='utf-8-sig') as f:
                 if all_jobs:
-                    fieldnames = ['title', 'company', 'location', 'status', 'applied_at']
-                    writer = csv.DictWriter(f, fieldnames=fieldnames)
+                    fieldnames = ['title', 'company', 'location', 'status', 'applied_at', 'link', 'posted', 'posted_days_ago']
+                    writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
                     writer.writeheader()
                     writer.writerows(all_jobs)
                 else:

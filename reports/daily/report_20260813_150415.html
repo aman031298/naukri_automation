@@ -1,0 +1,323 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Job Application Report - Naukri.com</title>
+                <style>
+                    * { margin: 0; padding: 0; box-sizing: border-box; }
+                    body {
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+                        background: #f0f2f5;
+                        padding: 20px;
+                        color: #333;
+                    }
+                    .container {
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        background: white;
+                        border-radius: 12px;
+                        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                        padding: 30px;
+                    }
+                    h1 {
+                        color: #1a237e;
+                        border-bottom: 3px solid #3498db;
+                        padding-bottom: 15px;
+                        margin-bottom: 25px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                    .header-info {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                        gap: 15px;
+                        background: #f8f9fa;
+                        padding: 15px 20px;
+                        border-radius: 8px;
+                        margin-bottom: 25px;
+                    }
+                    .header-info .label {
+                        font-size: 12px;
+                        color: #6c757d;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    }
+                    .header-info .value {
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #2c3e50;
+                    }
+                    .stats-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                        gap: 15px;
+                        margin-bottom: 30px;
+                    }
+                    .stat-card {
+                        padding: 20px;
+                        border-radius: 10px;
+                        text-align: center;
+                        color: white;
+                        transition: transform 0.2s;
+                    }
+                    .stat-card:hover {
+                        transform: translateY(-3px);
+                    }
+                    .stat-card .number {
+                        font-size: 32px;
+                        font-weight: bold;
+                        display: block;
+                    }
+                    .stat-card .label {
+                        font-size: 13px;
+                        opacity: 0.9;
+                        margin-top: 5px;
+                        display: block;
+                    }
+                    .stat-card.total { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+                    .stat-card.applied { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+                    .stat-card.skipped { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+                    .stat-card.failed { background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%); }
+                    
+                    .section-title {
+                        margin: 30px 0 15px 0;
+                        color: #1a237e;
+                        font-size: 20px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                    .section-title .count {
+                        background: #e9ecef;
+                        padding: 2px 10px;
+                        border-radius: 20px;
+                        font-size: 14px;
+                        color: #495057;
+                    }
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin-top: 10px;
+                        font-size: 14px;
+                    }
+                    th, td {
+                        padding: 12px 15px;
+                        text-align: left;
+                        border-bottom: 1px solid #e9ecef;
+                    }
+                    th {
+                        background: #f8f9fa;
+                        font-weight: 600;
+                        color: #495057;
+                        position: sticky;
+                        top: 0;
+                    }
+                    tr:hover {
+                        background: #f8f9fa;
+                    }
+                    .status-badge {
+                        padding: 4px 12px;
+                        border-radius: 20px;
+                        font-size: 11px;
+                        font-weight: 600;
+                        display: inline-block;
+                    }
+                    .status-badge.applied { background: #d4edda; color: #155724; }
+                    .status-badge.skipped { background: #fff3cd; color: #856404; }
+                    .status-badge.failed { background: #f8d7da; color: #721c24; }
+                    .status-badge.found { background: #cce5ff; color: #004085; }
+                    
+                    .no-data {
+                        text-align: center;
+                        padding: 40px;
+                        color: #6c757d;
+                        background: #f8f9fa;
+                        border-radius: 8px;
+                        margin: 10px 0;
+                    }
+                    .footer {
+                        margin-top: 30px;
+                        padding-top: 20px;
+                        border-top: 1px solid #e9ecef;
+                        text-align: center;
+                        color: #6c757d;
+                        font-size: 12px;
+                    }
+                    @media (max-width: 600px) {
+                        .container { padding: 15px; }
+                        .stats-grid { grid-template-columns: repeat(2, 1fr); }
+                        table { font-size: 12px; }
+                        th, td { padding: 8px 10px; }
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>📊 Job Application Report</h1>
+                    
+                    <div class="header-info">
+                        <div>
+                            <div class="label">Platform</div>
+                            <div class="value">Naukri.com</div>
+                        </div>
+                        <div>
+                            <div class="label">Generated</div>
+                            <div class="value">2026-08-13T15:04:15.514890</div>
+                        </div>
+                        <div>
+                            <div class="label">Keywords</div>
+                            <div class="value">N/A</div>
+                        </div>
+                        <div>
+                            <div class="label">Location</div>
+                            <div class="value"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card total">
+                            <span class="number">0</span>
+                            <span class="label">📊 Total Found</span>
+                        </div>
+                        <div class="stat-card applied">
+                            <span class="number">0</span>
+                            <span class="label">✅ Applied</span>
+                        </div>
+                        <div class="stat-card skipped">
+                            <span class="number">0</span>
+                            <span class="label">⏭️ Skipped</span>
+                        </div>
+                        <div class="stat-card failed">
+                            <span class="number">10</span>
+                            <span class="label">❌ Failed</span>
+                        </div>
+                    </div>
+                    
+                    
+            <div class="section-title">✅ Applied Jobs <span class="count">0</span></div>
+            <div class="no-data">No applied jobs to display</div>
+            
+                    
+            <div class="section-title">⏭️ Skipped Jobs <span class="count">0</span></div>
+            <div class="no-data">No skipped jobs to display</div>
+            
+                    
+        <div class="section-title">❌ Failed Jobs <span class="count">10</span></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Applied At</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr>
+                <td>1</td>
+                <td><strong>E Learning Developer || Storyline</strong></td>
+                <td>Niit Learning Systems</td>
+                <td>Remote</td>
+                <td>N/A</td>
+                <td><span class="status-badge failed">error</span></td>
+            </tr>
+            
+            <tr>
+                <td>2</td>
+                <td><strong>Back End Developer</strong></td>
+                <td>Nxtwave Disruptive Technologies(Hiring for a client)</td>
+                <td>Bengaluru</td>
+                <td>N/A</td>
+                <td><span class="status-badge failed">error</span></td>
+            </tr>
+            
+            <tr>
+                <td>3</td>
+                <td><strong>Gis Developer</strong></td>
+                <td>Nexa Core HR Pvt. Ltd.</td>
+                <td>Kolkata(EP Block Sector 5 Salt Lake)</td>
+                <td>N/A</td>
+                <td><span class="status-badge failed">error</span></td>
+            </tr>
+            
+            <tr>
+                <td>4</td>
+                <td><strong>Software Engineer</strong></td>
+                <td>Capgemini</td>
+                <td>Bengaluru</td>
+                <td>N/A</td>
+                <td><span class="status-badge failed">error</span></td>
+            </tr>
+            
+            <tr>
+                <td>5</td>
+                <td><strong>MERN stack Engineer (Developers)</strong></td>
+                <td>Nasu Group</td>
+                <td>Bengaluru</td>
+                <td>N/A</td>
+                <td><span class="status-badge failed">error</span></td>
+            </tr>
+            
+            <tr>
+                <td>6</td>
+                <td><strong>Front End Developer (React.js / Angular | Vue.js)</strong></td>
+                <td>Medicca Press</td>
+                <td>Mumbai(Goregaon West)</td>
+                <td>N/A</td>
+                <td><span class="status-badge failed">error</span></td>
+            </tr>
+            
+            <tr>
+                <td>7</td>
+                <td><strong>Back End Developer</strong></td>
+                <td>Innovatione India</td>
+                <td>Gurugram</td>
+                <td>N/A</td>
+                <td><span class="status-badge failed">error</span></td>
+            </tr>
+            
+            <tr>
+                <td>8</td>
+                <td><strong>Java Developer</strong></td>
+                <td>Codincity Digital Technologies</td>
+                <td>Chennai, Coimbatore</td>
+                <td>N/A</td>
+                <td><span class="status-badge failed">error</span></td>
+            </tr>
+            
+            <tr>
+                <td>9</td>
+                <td><strong>Associate Software Engineer - .Net with React</strong></td>
+                <td>Coupa</td>
+                <td>Hybrid - Bengaluru</td>
+                <td>N/A</td>
+                <td><span class="status-badge failed">error</span></td>
+            </tr>
+            
+            <tr>
+                <td>10</td>
+                <td><strong>Backend Developer - Node JS, PostgreSQL</strong></td>
+                <td>rigbot.com</td>
+                <td>Hybrid - Bengaluru</td>
+                <td>N/A</td>
+                <td><span class="status-badge failed">error</span></td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+                    
+                    <div class="footer">
+                        Generated by Job Automation System v1.0.0<br>
+                        Report ID: 20260813_150415
+                    </div>
+                </div>
+            </body>
+            </html>
+            

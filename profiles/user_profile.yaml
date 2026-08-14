@@ -43,7 +43,7 @@ career_preferences:
     - "Delhi / NCR"
     - "Remote"
 
-  expected_salary: ""
+  expected_salary: "8-10 LPA"
   notice_period: ""
   work_authorization: "Indian Citizen"
 
@@ -291,8 +291,8 @@ form_data:
   current_designation: "Software Engineer"
   total_experience: "2 years"
   relevant_experience: "2 years"
-  current_salary: ""
-  expected_salary: ""
+  current_salary: "5 LPA"
+  expected_salary: "8-10 LPA"
   notice_period: ""
 
   # Education details for forms

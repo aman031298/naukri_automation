@@ -1,0 +1,18 @@
+{
+  "platform": "Naukri.com",
+  "timestamp": "2026-08-13T14:38:41.582311",
+  "summary": {
+    "total_found": 0,
+    "applied": 0,
+    "skipped": 0,
+    "failed": 0,
+    "total_processed": 0
+  },
+  "applied_jobs": [],
+  "skipped_jobs": [],
+  "failed_jobs": [],
+  "search_keywords": [],
+  "search_location": "",
+  "duration_seconds": 0,
+  "duration": "N/A"
+}

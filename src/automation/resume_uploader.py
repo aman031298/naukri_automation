@@ -19,8 +19,7 @@ class ResumeUploader:
         
         # Resume file paths
         self.resume_paths = [
-            r"D:\Sachin Chakrawarti\Learn\myprojets\projects\naukri_automation\mydata\resume\Sachin Chakrawarti - Resume.pdf",
-            "./data/resume/Sachin Chakrawarti - Resume.pdf",
+            "./mydata/resume/Aman Resume.pdf",
             "./data/resume/resume.pdf",
             "./resume.pdf",
             "./resume.docx",

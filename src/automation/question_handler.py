@@ -11,6 +11,8 @@ from pathlib import Path
 from typing import Dict, List, Optional, Any, Tuple
 from datetime import datetime
 
+from src.config.settings import Config
+
 logger = logging.getLogger(__name__)
 
 class QuestionHandler:
@@ -84,7 +86,7 @@ class QuestionHandler:
                     {"id": "F003", "type": "text", "question": "What is your total experience?", "answer": "3-5 years"}
                 ],
                 "personal": [
-                    {"id": "F004", "type": "text", "question": "What is your name?", "answer": "Sachin Chakrawarti"}
+                    {"id": "F004", "type": "text", "question": "What is your name?", "answer": "Aman Vishwakarma"}
                 ],
                 "internship": [
                     {"id": "F005", "type": "yes_no", "question": "Can you work unpaid internship?", "answer": "No"}
@@ -100,19 +102,19 @@ class QuestionHandler:
             profile = load_user_profile()
             
             answers = {
-                'current_ctc': profile.get('form_data', {}).get('current_salary', '8-10 LPA'),
-                'expected_ctc': profile.get('form_data', {}).get('expected_salary', '15-20 LPA'),
-                'notice_period': profile.get('form_data', {}).get('notice_period', '30 days'),
-                'experience': profile.get('form_data', {}).get('total_experience', '3-5 years'),
-                'current_location': profile.get('personal_info', {}).get('city', 'Bangalore'),
-                'highest_education': profile.get('form_data', {}).get('highest_education', 'M.Tech in Data Science'),
-                'skills': profile.get('form_data', {}).get('skills_string', 'Python, Java, React, Spring Boot'),
-                'full_name': profile.get('personal_info', {}).get('first_name', 'Sachin'),
-                'last_name': profile.get('personal_info', {}).get('last_name', 'Chakrawarti'),
+                'current_ctc': profile.get('form_data', {}).get('current_salary', ''),
+                'expected_ctc': profile.get('form_data', {}).get('expected_salary', ''),
+                'notice_period': profile.get('form_data', {}).get('notice_period', ''),
+                'experience': profile.get('form_data', {}).get('total_experience', ''),
+                'current_location': profile.get('personal_info', {}).get('location', ''),
+                'highest_education': profile.get('form_data', {}).get('highest_education', ''),
+                'skills': profile.get('form_data', {}).get('skills_string', ''),
+                'full_name': profile.get('form_data', {}).get('first_name', ''),
+                'last_name': profile.get('form_data', {}).get('last_name', ''),
                 'email': profile.get('personal_info', {}).get('email', ''),
-                'phone': profile.get('personal_info', {}).get('phone', ''),
-                'gender': profile.get('personal_info', {}).get('gender', 'Male'),
-                'date_of_birth': profile.get('personal_info', {}).get('date_of_birth', '2001-03-20'),
+                'phone': profile.get('personal_info', {}).get('mobile', ''),
+                'gender': profile.get('personal_info', {}).get('gender', ''),
+                'date_of_birth': profile.get('personal_info', {}).get('date_of_birth', ''),
             }
             logger.info("✅ Loaded profile answers")
             return answers
@@ -120,6 +122,48 @@ class QuestionHandler:
             logger.warning(f"⚠️ Could not load profile: {str(e)}")
             return {}
     
+    def get_answer_for_text(self, question_text: str) -> str:
+        """Get a best-effort answer string for a raw question, independent
+        of any specific input element — used by the chat-panel flow, which
+        has one free-text box rather than typed form fields.
+        """
+        try:
+            text_lower = question_text.lower()
+
+            if 'unpaid' in text_lower and 'internship' in text_lower:
+                return "Thank you for the offer, but I am looking for paid opportunities at this time."
+
+            if 'f2f' in text_lower or 'face to face' in text_lower or 'face-to-face' in text_lower:
+                return "No"
+
+            if 'experience' in text_lower:
+                return "2 years"
+
+            q_db = self._find_question_in_db(question_text)
+            if q_db:
+                answer = self._get_answer_from_db(q_db, question_text)
+                if answer:
+                    return answer
+
+            profile_answer = self._get_answer_from_profile(question_text)
+            if profile_answer:
+                return profile_answer
+
+            # Yes/no-shaped questions (e.g. "Are you interested", "Are you
+            # willing to relocate") default to an affirmative — the goal of
+            # this bot is to apply to jobs, so a hedge or refusal here would
+            # work against every application it submits. Wording that
+            # implies a downside to agreeing (unpaid work, working without
+            # notice, etc.) still gets declined.
+            if any(q in text_lower for q in ['are you', 'do you', 'can you', 'interested', 'willing']):
+                negative_hints = ['unpaid', 'without pay', 'without notice']
+                return "No" if any(h in text_lower for h in negative_hints) else "Yes"
+
+            return Config.SCREENING_UNKNOWN_FALLBACK_ANSWER or "Yes"
+        except Exception as e:
+            logger.warning(f"⚠️ Could not resolve chat answer: {str(e)}")
+            return "Yes"
+
     def handle_questions(self) -> bool:
         """Main method to handle all questions on page"""
         try:
@@ -318,7 +362,33 @@ class QuestionHandler:
                 logger.info("💼 Detected unpaid internship question")
                 return self._handle_unpaid_internship_question(element, label)
             # ----------------------------------------------
-            
+
+            label_lower = label.lower()
+
+            # --- SPECIAL HANDLER FOR F2F (FACE-TO-FACE) QUESTIONS ---
+            if 'f2f' in label_lower or 'face to face' in label_lower or 'face-to-face' in label_lower:
+                logger.info("🙅 F2F question detected — answering No")
+                handler = self.type_handlers.get(q_type, self._handle_text)
+                if handler(element, "No", options):
+                    self.answered_questions.append({
+                        'question': label[:100], 'answer': 'No', 'type': q_type, 'db_id': None
+                    })
+                    return True
+                return self._skip_question(element)
+            # ----------------------------------------------
+
+            # --- SPECIAL HANDLER FOR EXPERIENCE QUESTIONS ---
+            if 'experience' in label_lower:
+                logger.info("📅 Experience question detected — answering 2 years")
+                handler = self.type_handlers.get(q_type, self._handle_text)
+                if handler(element, "2 years", options):
+                    self.answered_questions.append({
+                        'question': label[:100], 'answer': '2 years', 'type': q_type, 'db_id': None
+                    })
+                    return True
+                return self._skip_question(element)
+            # ----------------------------------------------
+
             # Find in database
             q_db = self._find_question_in_db(label)
             
@@ -330,6 +400,17 @@ class QuestionHandler:
                 answer = self._get_answer_from_profile(label)
                 logger.debug("   Using profile answer")
             
+            if not answer and q_type in ('yes_no', 'mcq'):
+                # No DB/profile match for a Yes/No-shaped question — infer
+                # from the question wording rather than skip outright.
+                # Defaults toward "Yes" since the bot's purpose is getting
+                # applications submitted; only nudge to "No" for wording
+                # that implies a downside to agreeing (unpaid, willing to
+                # relocate away, notice-period waivers, etc.).
+                negative_hints = ['unpaid', 'without pay', 'relocate', 'immediately with no notice']
+                answer = "No" if any(h in label_lower for h in negative_hints) else "Yes"
+                logger.info(f"🤔 No DB/profile match — inferring '{answer}' from question context")
+
             if answer:
                 # Use appropriate handler
                 handler = self.type_handlers.get(q_type, self._handle_text)
@@ -518,11 +599,16 @@ class QuestionHandler:
             
             # For checkboxes
             elif element.get_attribute('type') == 'checkbox':
-                # For checkboxes, just check it if it's not checked
-                if not element.is_checked():
+                # Whether "checked" means Yes or No depends on the answer
+                # this call was given (itself derived from question
+                # context in _process_question) — a checkbox for "Are you
+                # willing to relocate?" should be checked for answer="Yes"
+                # but left unchecked for answer="No", not checked
+                # unconditionally regardless of context.
+                should_check = answer.strip().lower() not in ('no', 'false', "don't", 'not interested')
+                if element.is_checked() != should_check:
                     element.click()
                     self.browser.human_delay(0.5, 1)
-                    return True
                 return True
             
             # For select dropdowns (treated as MCQ)

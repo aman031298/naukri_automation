@@ -1,0 +1,45 @@
+============================================================
+JOB APPLICATION REPORT - Naukri.com
+============================================================
+Generated: 2026-08-13T14:13:45.501046
+Keywords: 
+Location: 
+
+SUMMARY
+----------------------------------------
+Total Jobs Found: 0
+Applied: 1
+Skipped: 11
+Failed: 8
+Total Processed: 20
+
+APPLIED JOBS
+----------------------------------------
+1. Full Stack Developer (Cloud & Security) at Arbor Mobility - Bengaluru
+
+SKIPPED JOBS
+----------------------------------------
+1. Full Stack Developer at Godigi Infotech - Bengaluru
+2. Full Stack Developer at Apoxeo - Bengaluru
+3. Full Stack Developer at Tech Stalwart Solution - Bengaluru, Pune, Mumbai, Hyderabad, New Delhi, Chennai, Kolkata
+4. Full Stack Developer - AI/ML Integration at Metaplore Solutions - Bengaluru
+5. Full Stack Developer at Cloudthat Technologies - Bengaluru
+6. Full Stack Developer at Netlink Software - Bengaluru, Pune, Mumbai, Hyderabad, New Delhi, Chennai, Kolkata
+7. Full-Stack Developer at Pvalue Solutions - Bengaluru
+8. Full Stack Developer at Prgeeq Global Solutions - Bengaluru
+9. Full Stack Developer at Acefluency - Bengaluru
+10. Full Stack Developer at Eximietas Design - Bengaluru
+11. Full stack developer with React at Krazy Mantra It - Bengaluru, Pune, Mumbai, Hyderabad, New Delhi, Chennai, Kolkata
+
+FAILED JOBS
+----------------------------------------
+1. Azure Full Stack Developer at JK Technology Services - Timeout 30000ms exceeded.
+2. Full Stack Developer at Twenty20 Systems - Target page, context or browser has been closed
+3. Full Stack Developer at Moshi Moshi - Target page, context or browser has been closed
+4. Full Stack Developer at Yugamjteam Technologies - Target page, context or browser has been closed
+5. Full Stack Developer at Mavim International - Target page, context or browser has been closed
+6. Full stack developer at Siart Design Systems - Target page, context or browser has been closed
+7. Full Stack Unity Developer at Deepspatial - Target page, context or browser has been closed
+8. Integration Developer (Full-Stack) at Sigma Allied Services - Target page, context or browser has been closed
+
+============================================================

@@ -39,9 +39,9 @@
           "What is your current package?",
           "What is your current annual salary?"
         ],
-        "answer": "8-10 LPA",
+        "answer": "5 LPA",
         "answer_format": "number_range",
-        "fallback_answers": ["8 LPA", "10 LPA", "8-10 LPA", "9 LPA"]
+        "fallback_answers": ["5 LPA"]
       },
       {
         "id": "CTC002",
@@ -63,8 +63,8 @@
           "25-30 LPA",
           "30+ LPA"
         ],
-        "answer": "15-20 LPA",
-        "fallback_answers": ["10-15 LPA", "12-18 LPA", "15-20 LPA", "18-22 LPA"]
+        "answer": "8-10 LPA",
+        "fallback_answers": ["8-10 LPA"]
       },
       {
         "id": "CTC003",
@@ -191,8 +191,8 @@
           "Your highest qualification?",
           "What degree do you hold?"
         ],
-        "answer": "M.Tech in Data Science",
-        "fallback_answers": ["M.Tech", "Masters in Data Science", "Post Graduate"]
+        "answer": "B.Tech in Computer Science and Engineering",
+        "fallback_answers": ["B.Tech", "Bachelor of Technology", "Graduate"]
       },
       {
         "id": "EDU002",
@@ -212,7 +212,7 @@
           "Doctorate (PhD)",
           "Professional Certification"
         ],
-        "answer": "Post Graduate (Masters)"
+        "answer": "Graduate (Bachelors)"
       },
       {
         "id": "EDU003",
@@ -223,8 +223,8 @@
           "Which college?",
           "Name of your educational institution"
         ],
-        "answer": "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)",
-        "fallback_answers": ["RGPV", "Rajiv Gandhi Proudyogiki Vishwavidyalaya"]
+        "answer": "Shri Ram Institute of Science and Technology",
+        "fallback_answers": ["Shri Ram Institute of Science and Technology"]
       },
       {
         "id": "EDU004",
@@ -317,8 +317,8 @@
           "Full name?",
           "Name as per official documents"
         ],
-        "answer": "Sachin Chakrawarti",
-        "fallback_answers": ["Sachin", "Sachin Chakrawarti", "S. Chakrawarti"]
+        "answer": "Aman Vishwakarma",
+        "fallback_answers": ["Aman", "Aman Vishwakarma", "A. Vishwakarma"]
       },
       {
         "id": "PER002",
@@ -329,8 +329,8 @@
           "Email address?",
           "Contact email?"
         ],
-        "answer": "chakrawartisachin012@gmail.com",
-        "fallback_answers": ["sachin.c@email.com", "sachin.chakrawarti@email.com"]
+        "answer": "aman031298@gmail.com",
+        "fallback_answers": ["aman031298@gmail.com"]
       },
       {
         "id": "PER003",
@@ -342,8 +342,8 @@
           "Mobile number?",
           "What's your phone?"
         ],
-        "answer": "7879393032",
-        "fallback_answers": ["9876543210", "9999999999"]
+        "answer": "9977959918",
+        "fallback_answers": ["9977959918"]
       },
       {
         "id": "PER004",

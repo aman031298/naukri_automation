@@ -1,0 +1,29 @@
+============================================================
+JOB APPLICATION REPORT - Naukri.com
+============================================================
+Generated: 2026-08-13T15:04:15.514890
+Keywords: 
+Location: 
+
+SUMMARY
+----------------------------------------
+Total Jobs Found: 0
+Applied: 0
+Skipped: 0
+Failed: 10
+Total Processed: 10
+
+FAILED JOBS
+----------------------------------------
+1. E Learning Developer || Storyline at Niit Learning Systems - Target page, context or browser has been closed
+2. Back End Developer at Nxtwave Disruptive Technologies(Hiring for a client) - Target page, context or browser has been closed
+3. Gis Developer at Nexa Core HR Pvt. Ltd. - Target page, context or browser has been closed
+4. Software Engineer at Capgemini - Target page, context or browser has been closed
+5. MERN stack Engineer (Developers) at Nasu Group - Target page, context or browser has been closed
+6. Front End Developer (React.js / Angular | Vue.js) at Medicca Press - Target page, context or browser has been closed
+7. Back End Developer at Innovatione India - Target page, context or browser has been closed
+8. Java Developer at Codincity Digital Technologies - Target page, context or browser has been closed
+9. Associate Software Engineer - .Net with React at Coupa - Target page, context or browser has been closed
+10. Backend Developer - Node JS, PostgreSQL at rigbot.com - Target page, context or browser has been closed
+
+============================================================

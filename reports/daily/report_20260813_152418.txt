@@ -1,0 +1,32 @@
+============================================================
+JOB APPLICATION REPORT - Naukri.com
+============================================================
+Generated: 2026-08-13T15:24:18.429365
+Keywords: 
+Location: 
+
+SUMMARY
+----------------------------------------
+Total Jobs Found: 10
+Applied: 0
+Skipped: 1
+Failed: 9
+Total Processed: 10
+
+SKIPPED JOBS
+----------------------------------------
+1. Full Stack Engineer at 1pharmacy Network - Hyderabad
+
+FAILED JOBS
+----------------------------------------
+1. E Learning Developer || Storyline at Niit Learning Systems - Unknown error
+2. Back End Developer at Nxtwave Disruptive Technologies(Hiring for a client) - Unknown error
+3. Gis Developer at Nexa Core HR Pvt. Ltd. - Unknown error
+4. Back End Developer at Innovatione India - Unknown error
+5. Associate Software Engineer - .Net with React at Coupa - Unknown error
+6. Backend Developer - Node JS, PostgreSQL at rigbot.com - Unknown error
+7. Java Developer at Agiliad - Unknown error
+8. STG Infotech invites Java Full Stack Developer at Systems Technology (STI) - Unknown error
+9. Front End Developer at Odex India Solutions - Target page, context or browser has been closed
+
+============================================================

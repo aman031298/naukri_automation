@@ -2,8 +2,10 @@
 Naukri.com Search Component - Updated for current UI
 """
 import logging
+import re
 import time
-from typing import List, Dict
+from datetime import datetime, timedelta
+from typing import List, Dict, Optional
 
 from src.automation.base_applier import BaseApplier
 from src.config.settings import Config
@@ -12,24 +14,31 @@ logger = logging.getLogger(__name__)
 
 class NaukriSearch(BaseApplier):
     """Handles Naukri.com job search functionality"""
-    
+
     def __init__(self, browser):
         super().__init__(browser)
-        
+
         # Search specific selectors - Updated for current Naukri UI
         self.search_selectors = {
             'search_input': "input[title='Search'], input.search-job, input[placeholder*='Search'], input[name='qp'], input[class*='search'], #searchKeyword, .search-input",
             'location_input': "input[title='Location'], input.location, input[placeholder*='Location'], input[name='location'], #locationInput, .location-input",
             'search_btn': "button[type='submit'], .search-btn, button:has-text('Search'), #searchButton, .nI-gNb-sb__search-btn",
         }
+
+        # Jobs posted before this many days ago are dropped during extraction
+        self.max_job_age_days = Config.MAX_JOB_AGE_DAYS
     
     def search_jobs(self) -> List[Dict]:
         """Search for jobs on Naukri with improved handling"""
         try:
             logger.info(f"🔍 Searching jobs: {Config.JOB_KEYWORDS}")
-            
-            # Try different search methods
+
+            # Try different search methods. The recommended-jobs feed on
+            # the post-login homepage is tried first per user preference —
+            # it reflects what Naukri already thinks matches this profile,
+            # rather than a fresh keyword search.
             methods = [
+                self._search_via_recommended_feed,
                 self._search_via_homepage,
                 self._search_via_direct_url,
                 self._search_via_jobs_page,
@@ -54,6 +63,93 @@ class NaukriSearch(BaseApplier):
             self.take_screenshot("search_error")
             return []
     
+    def _search_via_recommended_feed(self) -> List[Dict]:
+        """Read jobs directly from the 'Recommended jobs for you' carousel
+        shown on the homepage right after login, instead of running a
+        keyword/location search.
+
+        These cards (div.cust-job-tuple inside div.ni-citem) don't carry a
+        plain href on their title link — Naukri opens the job page via a
+        JS click handler in a new tab — so extraction here works
+        differently from the search-results page: title/company/location/
+        posted-date come straight from each card's HTML, but the job link
+        can only be obtained by clicking through, one candidate at a time,
+        until a job clears the exclude-keyword and age filters.
+        """
+        try:
+            logger.info("🔍 Method 0: Reading homepage recommended-jobs feed...")
+
+            current_url = self.page.url
+            if "naukri.com" not in current_url or "login" in current_url:
+                self.page.goto("https://www.naukri.com/", wait_until="domcontentloaded")
+                self.browser.human_delay(3, 5)
+
+            cards = self.page.locator("div.ni-citem .cust-job-tuple").all()
+            if not cards:
+                logger.warning("No cards found in recommended-jobs feed")
+                return []
+
+            logger.info(f"Found {len(cards)} cards in recommended-jobs feed")
+
+            jobs = []
+            skipped_old = 0
+            for card in cards:
+                try:
+                    title = self._extract_text(card, ["a.title"])
+                    if not title or title == "Unknown":
+                        continue
+
+                    if self.is_excluded(title, Config.EXCLUDE_KEYWORDS):
+                        continue
+
+                    posted_text = self._extract_text(card, [".job-post-day"])
+                    posted_days_ago = self._parse_posted_age(posted_text)
+                    if posted_days_ago is not None and posted_days_ago > self.max_job_age_days:
+                        skipped_old += 1
+                        continue
+
+                    company = self._extract_text(card, [".comp-name"])
+                    location = self._extract_text(card, [".loc"])
+
+                    # Clicking the title is the only way to get the real
+                    # job URL from this compact card layout — it opens in
+                    # a new tab, which we then read and close, leaving the
+                    # homepage tab as the active page for the next card.
+                    title_link = card.locator("a.title").first
+                    try:
+                        with self.browser.context.expect_page(timeout=8000) as new_page_info:
+                            title_link.click()
+                        new_page = new_page_info.value
+                        new_page.wait_for_load_state("domcontentloaded", timeout=15000)
+                        link = new_page.url
+                        new_page.close()
+                    except Exception as e:
+                        logger.warning(f"Could not resolve link for card '{title}': {str(e)}")
+                        continue
+
+                    jobs.append({
+                        'title': title,
+                        'company': company if company != "Unknown" else "Not Specified",
+                        'location': location if location != "Unknown" else "Not Specified",
+                        'link': link,
+                        'posted': posted_text if posted_text != "Unknown" else "",
+                        'posted_days_ago': posted_days_ago,
+                        'status': 'found'
+                    })
+
+                except Exception as e:
+                    logger.warning(f"Could not parse recommended-feed card: {str(e)}")
+                    continue
+
+            if skipped_old:
+                logger.info(f"⏭️ Skipped {skipped_old} recommended jobs older than {self.max_job_age_days} days")
+            logger.info(f"✅ Extracted {len(jobs)} jobs from recommended-jobs feed")
+            return jobs
+
+        except Exception as e:
+            logger.warning(f"Recommended-feed search failed: {str(e)}")
+            return []
+
     def _search_via_homepage(self) -> List[Dict]:
         """Search using the homepage search bar"""
         try:
@@ -221,6 +317,40 @@ class NaukriSearch(BaseApplier):
             logger.warning(f"Search button click failed: {str(e)}")
             return False
     
+    def search_more_jobs(self, page_number: int, exclude_links: Optional[set] = None) -> List[Dict]:
+        """Fetch an additional page of keyword/location search results.
+
+        Used when the recommended-jobs feed and page 1 aren't enough to
+        reach the target number of confirmed applications — Naukri's
+        search-results URLs paginate with a numeric suffix
+        (…-jobs-in-<location>-<page>), so each call here pulls a fresh
+        batch of candidates instead of reprocessing the same jobs.
+        """
+        try:
+            keywords = Config.JOB_KEYWORDS[0].replace(" ", "-").lower()
+            location = Config.JOB_LOCATION[0] if isinstance(Config.JOB_LOCATION, list) else Config.JOB_LOCATION
+            location = location.replace(" ", "-").lower()
+
+            suffix = "" if page_number <= 1 else f"-{page_number}"
+            url = f"https://www.naukri.com/{keywords}-jobs-in-{location}{suffix}"
+
+            logger.info(f"🔍 Fetching search page {page_number}: {url}")
+            self.page.goto(url, wait_until="domcontentloaded")
+            self.browser.human_delay(3, 5)
+
+            if not self._has_jobs_on_page():
+                logger.info(f"No jobs on page {page_number} — likely past the last page")
+                return []
+
+            jobs = self._extract_jobs()
+            if exclude_links:
+                jobs = [j for j in jobs if j.get('link') not in exclude_links]
+            return jobs
+
+        except Exception as e:
+            logger.warning(f"search_more_jobs failed for page {page_number}: {str(e)}")
+            return []
+
     def _search_via_direct_url(self) -> List[Dict]:
         """Search using direct URL (most reliable)"""
         try:
@@ -327,16 +457,21 @@ class NaukriSearch(BaseApplier):
         """Extract job details from search results"""
         jobs = []
         try:
-            # Wait for results with multiple selectors
+            # div.cust-job-tuple is the actual per-listing card on the current
+            # Naukri UI (verified against live search results). Older
+            # selectors are kept as fallbacks in case Naukri reverts a UI
+            # experiment, but cust-job-tuple must stay first: broader
+            # container selectors like .srp-jobtuple-wrapper also match and
+            # produce duplicate/nested results if picked first.
             job_selectors = [
+                "div.cust-job-tuple",
                 "article.jobTuple",
                 ".jobCard",
                 ".job-list-card",
                 ".job-card",
                 ".result-card",
-                ".srp-jobtuple-wrapper"
             ]
-            
+
             cards = []
             for selector in job_selectors:
                 try:
@@ -347,15 +482,17 @@ class NaukriSearch(BaseApplier):
                         break
                 except:
                     continue
-            
+
             if not cards:
                 logger.warning("No job cards found")
                 return []
-            
+
+            skipped_old = 0
             for card in cards:
                 try:
                     # Extract job details
                     title = self._extract_text(card, [
+                        "h2 a.title",
                         ".title a",
                         ".job-title",
                         "h2 a",
@@ -363,8 +500,9 @@ class NaukriSearch(BaseApplier):
                         ".job-title-link",
                         "a[class*='title']"
                     ])
-                    
+
                     company = self._extract_text(card, [
+                        "a.comp-name",
                         ".subTitle",
                         ".company",
                         ".job-company",
@@ -372,41 +510,93 @@ class NaukriSearch(BaseApplier):
                         ".jobCard__company",
                         "a[class*='company']"
                     ])
-                    
+
                     location = self._extract_text(card, [
+                        ".locWdth",
+                        ".loc-wrap",
                         ".loc",
                         ".location",
                         ".job-location",
                         ".jobCard__location",
                         "span[class*='location']"
                     ])
-                    
-                    # Get link
-                    link_elem = card.locator("a").first
+
+                    posted_text = self._extract_text(card, [
+                        ".job-post-day",
+                        "span[class*='job-post-day']",
+                    ])
+
+                    # Get link from the title anchor specifically — grabbing
+                    # the card's first <a> is unreliable since company/rating
+                    # links can appear before the title link in the DOM.
+                    link_elem = card.locator("h2 a.title, .title a, h2 a").first
                     link = link_elem.get_attribute("href") if link_elem.count() else ""
-                    
+
                     if not title or title == "Unknown":
                         continue
-                    
+
                     if self.is_excluded(title, Config.EXCLUDE_KEYWORDS):
                         continue
-                    
+
+                    posted_days_ago = self._parse_posted_age(posted_text)
+                    if posted_days_ago is not None and posted_days_ago > self.max_job_age_days:
+                        skipped_old += 1
+                        continue
+
                     jobs.append({
                         'title': title,
                         'company': company if company != "Unknown" else "Not Specified",
                         'location': location if location != "Unknown" else "Not Specified",
                         'link': link,
+                        'posted': posted_text if posted_text != "Unknown" else "",
+                        'posted_days_ago': posted_days_ago,
                         'status': 'found'
                     })
-                    
+
                 except Exception as e:
                     logger.warning(f"Could not parse job card: {str(e)}")
                     continue
-            
+
+            if skipped_old:
+                logger.info(f"⏭️ Skipped {skipped_old} jobs older than {self.max_job_age_days} days")
             logger.info(f"✅ Extracted {len(jobs)} jobs")
             return jobs
-            
+
         except Exception as e:
             logger.error(f"Job extraction failed: {str(e)}")
             self.take_screenshot("extract_error")
             return jobs
+
+    def _parse_posted_age(self, posted_text: str) -> Optional[int]:
+        """Convert Naukri's 'posted X ago' text into a day count.
+
+        Returns None when the age can't be determined (e.g. missing text) —
+        callers should treat that as "unknown" rather than "old", since
+        filtering out a job just because we failed to parse its date would
+        silently shrink the result set for the wrong reason.
+        """
+        if not posted_text or posted_text == "Unknown":
+            return None
+
+        text = posted_text.strip().lower()
+
+        if "today" in text or "just now" in text or "few hours" in text:
+            return 0
+
+        # Naukri caps its display at "3+ weeks ago" instead of showing an
+        # exact count past that point — treat the '+' as "at least this
+        # old" so these get excluded rather than falling through to the
+        # "unknown age" case (which is treated as not-old, i.e. kept).
+        match = re.search(r"(\d+)\+?\s*day", text)
+        if match:
+            return int(match.group(1))
+
+        match = re.search(r"(\d+)\+?\s*week", text)
+        if match:
+            return int(match.group(1)) * 7
+
+        match = re.search(r"(\d+)\+?\s*month", text)
+        if match:
+            return int(match.group(1)) * 30
+
+        return None

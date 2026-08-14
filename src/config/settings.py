@@ -25,6 +25,8 @@ class Config:
     EXCLUDE_KEYWORDS = [kw.strip().lower() for kw in EXCLUDE_KEYWORDS]
     
     MAX_APPLICATIONS = int(os.getenv("MAX_APPLICATIONS", 20))
+    MAX_JOB_AGE_DAYS = int(os.getenv("MAX_JOB_AGE_DAYS", 6))
+    SCREENING_UNKNOWN_FALLBACK_ANSWER = os.getenv("SCREENING_UNKNOWN_FALLBACK_ANSWER", "")
     
     # Browser settings
     HEADLESS = os.getenv("HEADLESS", "false").lower() == "true"

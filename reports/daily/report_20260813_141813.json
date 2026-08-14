@@ -1,0 +1,65 @@
+{
+  "platform": "Naukri.com",
+  "timestamp": "2026-08-13T14:18:13.748467",
+  "summary": {
+    "total_found": 0,
+    "applied": 0,
+    "skipped": 2,
+    "failed": 3,
+    "total_processed": 5
+  },
+  "applied_jobs": [],
+  "skipped_jobs": [
+    {
+      "title": "Integration Developer (Full-Stack)",
+      "company": "Sigma Allied Services",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-integration-developer-full-stack-sigma-allied-services-private-limited-bengaluru-0-to-4-years-050826503956",
+      "posted": "1 week ago",
+      "posted_days_ago": 7,
+      "status": "external_site"
+    },
+    {
+      "title": "Full Stack Quantitative Developer",
+      "company": "E4 Software Services",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-quantitative-developer-e4-softwares-bengaluru-1-to-4-years-030826500339",
+      "posted": "1 week ago",
+      "posted_days_ago": 7,
+      "status": "external_site"
+    }
+  ],
+  "failed_jobs": [
+    {
+      "title": "Full Stack Developer (Cloud & Security)",
+      "company": "Arbor Mobility",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-cloud-security-arbor-mobility-bengaluru-3-to-6-years-300726028003",
+      "posted": "1 week ago",
+      "posted_days_ago": 7,
+      "status": "form_failed"
+    },
+    {
+      "title": "Full Stack Unity Developer",
+      "company": "Deepspatial",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-unity-developer-deepspatial-bengaluru-3-to-5-years-060826928680",
+      "posted": "6 days ago",
+      "posted_days_ago": 6,
+      "status": "form_failed"
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Ventures Hrd Centre",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-full-stack-developer-ventures-hrd-centre-bengaluru-5-to-8-years-070826917857",
+      "posted": "6 days ago",
+      "posted_days_ago": 6,
+      "status": "form_failed"
+    }
+  ],
+  "search_keywords": [],
+  "search_location": "",
+  "duration_seconds": 0,
+  "duration": "N/A"
+}

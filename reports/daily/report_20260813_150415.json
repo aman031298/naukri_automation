@@ -1,0 +1,119 @@
+{
+  "platform": "Naukri.com",
+  "timestamp": "2026-08-13T15:04:15.514890",
+  "summary": {
+    "total_found": 0,
+    "applied": 0,
+    "skipped": 0,
+    "failed": 10,
+    "total_processed": 10
+  },
+  "applied_jobs": [],
+  "skipped_jobs": [],
+  "failed_jobs": [
+    {
+      "title": "E Learning Developer || Storyline",
+      "company": "Niit Learning Systems",
+      "location": "Remote",
+      "link": "https://www.naukri.com/job-listings-e-learning-developer-storyline-niit-learning-systems-gurugram-2-to-7-years-210526018983?src=drecomm_dashboard_apply",
+      "posted": "12d ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "Back End Developer",
+      "company": "Nxtwave Disruptive Technologies(Hiring for a client)",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-back-end-developer-nxtwave-disruptive-technologies-hiring-for-a-client-bengaluru-2-to-4-years-110826039852?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "Gis Developer",
+      "company": "Nexa Core HR Pvt. Ltd.",
+      "location": "Kolkata(EP Block Sector 5 Salt Lake)",
+      "link": "https://www.naukri.com/job-listings-gis-developer-nexa-core-hr-kolkata-2-to-5-years-300726033408?src=drecomm_dashboard_apply",
+      "posted": "13d ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Capgemini",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-software-engineer-capgemini-technology-services-india-limited-bengaluru-0-to-5-years-110826930912?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "MERN stack Engineer (Developers)",
+      "company": "Nasu Group",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-mern-stack-engineer-developers-nasugroup-bengaluru-0-to-3-years-120826926513?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "Front End Developer (React.js / Angular | Vue.js)",
+      "company": "Medicca Press",
+      "location": "Mumbai(Goregaon West)",
+      "link": "https://www.naukri.com/job-listings-front-end-developer-react-js-angular-vue-js-medicca-press-mumbai-3-to-8-years-120826024841?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "Back End Developer",
+      "company": "Innovatione India",
+      "location": "Gurugram",
+      "link": "https://www.naukri.com/job-listings-back-end-developer-innovatione-india-gurugram-0-to-3-years-120826025751?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "Java Developer",
+      "company": "Codincity Digital Technologies",
+      "location": "Chennai, Coimbatore",
+      "link": "https://www.naukri.com/job-listings-java-developer-codincity-digital-technologies-chennai-coimbatore-3-to-5-years-120826019152?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "Associate Software Engineer - .Net with React",
+      "company": "Coupa",
+      "location": "Hybrid - Bengaluru",
+      "link": "https://www.naukri.com/job-listings-associate-software-engineer-net-with-react-coupa-bengaluru-1-to-3-years-120826017020?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    },
+    {
+      "title": "Backend Developer - Node JS, PostgreSQL",
+      "company": "rigbot.com",
+      "location": "Hybrid - Bengaluru",
+      "link": "https://www.naukri.com/job-listings-backend-developer-node-js-postgresql-rigbot-solutions-private-limited-bengaluru-3-to-6-years-110826008662?src=drecomm_dashboard_apply",
+      "posted": "2d ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    }
+  ],
+  "search_keywords": [],
+  "search_location": "",
+  "duration_seconds": 0,
+  "duration": "N/A"
+}

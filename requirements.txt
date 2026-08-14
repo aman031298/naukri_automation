@@ -23,7 +23,6 @@ python-dateutil==2.8.2
 
 # Database
 sqlalchemy==2.0.23
-sqlite3
 
 # Notifications
 plyer==0.9
@@ -36,7 +35,3 @@ matplotlib==3.8.2  # For charts
 # NLP / AI (Optional)
 nltk==3.8.1
 scikit-learn==1.3.2
-
-# Email
-smtplib
-email

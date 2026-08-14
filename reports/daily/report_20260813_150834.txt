@@ -1,0 +1,29 @@
+============================================================
+JOB APPLICATION REPORT - Naukri.com
+============================================================
+Generated: 2026-08-13T15:08:34.401198
+Keywords: 
+Location: 
+
+SUMMARY
+----------------------------------------
+Total Jobs Found: 0
+Applied: 10
+Skipped: 0
+Failed: 0
+Total Processed: 10
+
+APPLIED JOBS
+----------------------------------------
+1. E Learning Developer || Storyline at Niit Learning Systems - Remote
+2. Back End Developer at Nxtwave Disruptive Technologies(Hiring for a client) - Bengaluru
+3. Gis Developer at Nexa Core HR Pvt. Ltd. - Kolkata(EP Block Sector 5 Salt Lake)
+4. Software Engineer at Capgemini - Bengaluru
+5. MERN stack Engineer (Developers) at Nasu Group - Bengaluru
+6. Front End Developer (React.js / Angular | Vue.js) at Medicca Press - Mumbai(Goregaon West)
+7. Back End Developer at Innovatione India - Gurugram
+8. Java Developer at Codincity Digital Technologies - Chennai, Coimbatore
+9. Associate Software Engineer - .Net with React at Coupa - Hybrid - Bengaluru
+10. Backend Developer - Node JS, PostgreSQL at rigbot.com - Hybrid - Bengaluru
+
+============================================================

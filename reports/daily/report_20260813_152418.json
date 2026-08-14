@@ -1,0 +1,111 @@
+{
+  "platform": "Naukri.com",
+  "timestamp": "2026-08-13T15:24:18.429365",
+  "summary": {
+    "total_found": 10,
+    "applied": 0,
+    "skipped": 1,
+    "failed": 9,
+    "total_processed": 10
+  },
+  "applied_jobs": [],
+  "skipped_jobs": [
+    {
+      "title": "Full Stack Engineer",
+      "company": "1pharmacy Network",
+      "location": "Hyderabad",
+      "link": "https://www.naukri.com/job-listings-full-stack-engineer-1pharmacy-network-hyderabad-3-to-8-years-120826501130?src=drecomm_dashboard_apply",
+      "posted": "1h ago",
+      "posted_days_ago": null,
+      "status": "external_site"
+    }
+  ],
+  "failed_jobs": [
+    {
+      "title": "E Learning Developer || Storyline",
+      "company": "Niit Learning Systems",
+      "location": "Remote",
+      "link": "https://www.naukri.com/job-listings-e-learning-developer-storyline-niit-learning-systems-gurugram-2-to-7-years-210526018983?src=drecomm_dashboard_apply",
+      "posted": "12d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "Back End Developer",
+      "company": "Nxtwave Disruptive Technologies(Hiring for a client)",
+      "location": "Bengaluru",
+      "link": "https://www.naukri.com/job-listings-back-end-developer-nxtwave-disruptive-technologies-hiring-for-a-client-bengaluru-2-to-4-years-110826039852?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "Gis Developer",
+      "company": "Nexa Core HR Pvt. Ltd.",
+      "location": "Kolkata(EP Block Sector 5 Salt Lake)",
+      "link": "https://www.naukri.com/job-listings-gis-developer-nexa-core-hr-kolkata-2-to-5-years-300726033408?src=drecomm_dashboard_apply",
+      "posted": "13d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "Back End Developer",
+      "company": "Innovatione India",
+      "location": "Gurugram",
+      "link": "https://www.naukri.com/job-listings-back-end-developer-innovatione-india-gurugram-0-to-3-years-120826025751?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "Associate Software Engineer - .Net with React",
+      "company": "Coupa",
+      "location": "Hybrid - Bengaluru",
+      "link": "https://www.naukri.com/job-listings-associate-software-engineer-net-with-react-coupa-bengaluru-1-to-3-years-120826017020?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "Backend Developer - Node JS, PostgreSQL",
+      "company": "rigbot.com",
+      "location": "Hybrid - Bengaluru",
+      "link": "https://www.naukri.com/job-listings-backend-developer-node-js-postgresql-rigbot-solutions-private-limited-bengaluru-3-to-6-years-110826008662?src=drecomm_dashboard_apply",
+      "posted": "2d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "Java Developer",
+      "company": "Agiliad",
+      "location": "Pune",
+      "link": "https://www.naukri.com/job-listings-java-developer-agiliad-pune-3-to-5-years-120826022081?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "STG Infotech invites Java Full Stack Developer",
+      "company": "Systems Technology (STI)",
+      "location": "Chennai",
+      "link": "https://www.naukri.com/job-listings-stg-infotech-invites-java-full-stack-developer-systems-technology-sti-chennai-2-to-4-years-110826033100?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "form_failed"
+    },
+    {
+      "title": "Front End Developer",
+      "company": "Odex India Solutions",
+      "location": "Mumbai",
+      "link": "https://www.naukri.com/job-listings-front-end-developer-odex-global-mumbai-2-to-5-years-120826920749?src=drecomm_dashboard_apply",
+      "posted": "1d ago",
+      "posted_days_ago": null,
+      "status": "error",
+      "error": "Target page, context or browser has been closed"
+    }
+  ],
+  "search_keywords": [],
+  "search_location": "",
+  "duration_seconds": 0,
+  "duration": "N/A"
+}

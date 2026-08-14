@@ -1,0 +1,32 @@
+============================================================
+JOB APPLICATION REPORT - Naukri.com
+============================================================
+Generated: 2026-08-13T16:29:27.189612
+Keywords: 
+Location: 
+
+SUMMARY
+----------------------------------------
+Total Jobs Found: 10
+Applied: 0
+Skipped: 2
+Failed: 8
+Total Processed: 10
+
+SKIPPED JOBS
+----------------------------------------
+1. Full Stack Engineer at 1pharmacy Network - Hyderabad
+2. Sr . Next . js / Node . js Developer at Akra Tech - Chennai
+
+FAILED JOBS
+----------------------------------------
+1. E Learning Developer || Storyline at Niit Learning Systems - Unknown error
+2. Back End Developer at Nxtwave Disruptive Technologies(Hiring for a client) - Unknown error
+3. Back End Developer at Innovatione India - Unknown error
+4. Backend Developer - Node JS, PostgreSQL at rigbot.com - Unknown error
+5. Front End Developer at Odex India Solutions - Unknown error
+6. Software Engineer - Ui Path Developer at Ecolab Global Services - Unknown error
+7. Mern Stack Developer at Unify Technologies - Unknown error
+8. Fullstack Developer at Rudrabhishek Enterprises - Unknown error
+
+============================================================

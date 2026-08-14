@@ -1,0 +1,27 @@
+============================================================
+JOB APPLICATION REPORT - Naukri.com
+============================================================
+Generated: 2026-08-13T14:18:13.748467
+Keywords: 
+Location: 
+
+SUMMARY
+----------------------------------------
+Total Jobs Found: 0
+Applied: 0
+Skipped: 2
+Failed: 3
+Total Processed: 5
+
+SKIPPED JOBS
+----------------------------------------
+1. Integration Developer (Full-Stack) at Sigma Allied Services - Bengaluru
+2. Full Stack Quantitative Developer at E4 Software Services - Bengaluru
+
+FAILED JOBS
+----------------------------------------
+1. Full Stack Developer (Cloud & Security) at Arbor Mobility - Unknown error
+2. Full Stack Unity Developer at Deepspatial - Unknown error
+3. Full Stack Developer at Ventures Hrd Centre - Unknown error
+
+============================================================
